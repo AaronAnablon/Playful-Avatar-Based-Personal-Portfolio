@@ -59,10 +59,10 @@ export default function App() {
 
   return (
     <div className={`${theme} max-w-screen-xl flex flex-col justify-content-center mx-auto`}>
-      <div className='fixed bottom-10 right-10' onClick={() => scrollToTop()}>
+      <div className='fixed bg-slate-500 z-20 text-white rounded-full bottom-10 right-10' onClick={() => scrollToTop()}>
         <FaArrowAltCircleUp size={24}/>
       </div>
-      <div className='fixed hidden md:block right-40 top-64' style={{ width: '18rem', height: '18rem' }}>
+      <div className='fixed hidden md:block right-24 top-64' style={{ width: '18rem', height: '18rem' }}>
         {isWalking ? (
           <Image src={man} alt="Walking" layout='fill' objectFit='fill' onClick={handleScroll} />
         ) : (

@@ -1,37 +1,56 @@
-import { forwardRef } from 'react';
-import { SiHtml5,
-  SiCss3, 
-  SiTailwindcss, 
-  SiReact,
-  SiBootstrap, 
-  SiMongodb,
-  SiMysql,
-  SiJavascript,
-  SiNodedotjs ,
-  SiVisualstudio,
-  SiCsharp
- } from "react-icons/si";
+import { forwardRef, useEffect, useState } from 'react';
+import cards from '../helpers/skillsCards'
+
 
 function Skills({ title }, ref) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [animate, setAnimate] = useState(false);
+
+  const previousIndex = (currentIndex - 1 + cards.length) % cards.length;
+  const futureIndex = (currentIndex + 1) % cards.length;
+
+const handlePrevious = () => {
+  setTimeout(() => {
+    setAnimate(true);
+    setTimeout(() => {
+      setAnimate(false); 
+      setCurrentIndex((currentIndex - 1 + cards.length) % cards.length)
+    }, 1000);
+  }, 1000);
+}
+
+const handleNext = () => {
+  setTimeout(() => {
+    setAnimate(true);
+    setTimeout(() => {
+      setAnimate(false); 
+      setCurrentIndex((currentIndex + 1) % cards.length)
+    }, 1000);
+  }, 1000);
+}
+
   return (
     <div ref={ref}>
-      <div className="min-h-screen flex align-center justify-center">
+      <div className="h-screen flex justify-center items-center">
         <div className="container mx-auto px-4 py-8">
           <h2 className="text-2xl font-bold mb-4">Skills</h2>
-          <div className="grid grid-cols-2 h-max md:grid-cols-3 gap-1 justify-center">
-            <div className="rounded-md p-4"><SiHtml5 size={200}/></div>
-            <div className="rounded-md p-4"><SiCss3 size={200}/></div>
-            <div className="rounded-md p-4"><SiJavascript size={200}/></div>
-            <div className="rounded-md p-4"><SiReact size={200}/></div>
-            <div className="rounded-md p-4"><SiTailwindcss size={200}/></div>
-            <div className="rounded-md p-4"><SiBootstrap size={200}/></div>
-            <div className="rounded-md p-4"><SiNodedotjs size={200}/></div>
-            <div className="rounded-md p-4"><SiMongodb size={200}/></div>
-            <div className="rounded-md p-4"><SiMysql size={200}/></div>
-            <div className="rounded-md p-4"><SiCsharp size={200}/></div>
-            <div className="rounded-md p-4"><SiVisualstudio size={200}/>
+          <div className="flex sm:justify-start justify-center items-center gap-4">
+            <div className={`bg-slate-800 md:p-10 p-2  rounded-md md:w-64 md:h-64 w-20 h-20`}>
+              {cards[previousIndex].card}
+            </div>
+            <div className={`${animate ? 'translate-x-[-100%] duration-1000' : ''} bg-slate-800 md:p-10 p-2 gap-4 grid md:text-lg text-xs justify-items-center rounded-md w-32 h-32 md:w-96 md:h-96`}>
+              {cards[currentIndex].card}
+              {cards[currentIndex].desc}
+            </div>
+            <div className={`${animate ? 'translate-x-[-100%] duration-1000' : ''} bg-slate-800 md:p-10 p-2 rounded-md md:w-64 md:h-64 w-20 h-20`}>
+              {cards[futureIndex].card}</div>
           </div>
-        </div>
+          <div className="flex justify-center mt-4 gap-4">
+            <button onClick={handlePrevious}>
+              Previous
+            </button>
+            <button onClick={handleNext}>Next</button>
+          </div>
         </div>
       </div>
     </div>

@@ -7,8 +7,8 @@ function Blog({ title }, ref) {
   return (
     <div ref={ref}>
 
-      <div className="h-max flex justify-center mt-24">
-        <div className="grid sm:grid-cols-1 md:grid-cols-2">
+      <div className="h-max flex justify-cente mt-24">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 z-30">
           <div className="p-4 flex ml-10 items-center">
             <div>
               <p>Hello! You found me.</p>
