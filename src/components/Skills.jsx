@@ -1,57 +1,64 @@
-import { forwardRef, useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState, useRef } from 'react';
 import cards from '../helpers/skillsCards'
-
+import Slider from "react-slick";
+import { useTheme } from '../contexts/ThemeContext';
+import NavCards from '@/helpers/NavCards';
+import { motion, useAnimate, useInView } from "framer-motion";
 
 function Skills({ title }, ref) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [animate, setAnimate] = useState(false);
+  const { isDarkMode } = useTheme();
+  const [scope, animate] = useAnimate()
+  const isInView = useInView(scope)
 
-  const previousIndex = (currentIndex - 1 + cards.length) % cards.length;
-  const futureIndex = (currentIndex + 1) % cards.length;
+  const navSettings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
-const handlePrevious = () => {
-  setTimeout(() => {
-    setAnimate(true);
-    setTimeout(() => {
-      setAnimate(false); 
-      setCurrentIndex((currentIndex - 1 + cards.length) % cards.length)
-    }, 1000);
-  }, 1000);
-}
+  useEffect(() => {
+    if (isInView) {
+      animate(scope.current, { opacity: 100 })
+    } else {
+      animate(scope.current, { opacity: 0})
+    }
+  }, [isInView])
 
-const handleNext = () => {
-  setTimeout(() => {
-    setAnimate(true);
-    setTimeout(() => {
-      setAnimate(false); 
-      setCurrentIndex((currentIndex + 1) % cards.length)
-    }, 1000);
-  }, 1000);
-}
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
+  const slider1 = useRef(null);
+  const slider2 = useRef(null);
 
+  useEffect(() => {
+    setNav1(slider1.current);
+    setNav2(slider2.current);
+  }, []);
   return (
     <div ref={ref}>
-      <div className="h-screen flex justify-center items-center">
-        <div className="container mx-auto px-4 py-8">
-          <h2 className="text-2xl font-bold mb-4">Skills</h2>
-          <div className="flex sm:justify-start justify-center items-center gap-4">
-            <div className={`bg-slate-800 md:p-10 p-2  rounded-md md:w-64 md:h-64 w-20 h-20`}>
-              {cards[previousIndex].card}
+      <div className="h-screen">
+        <div className="relative">
+          <motion.div ref={scope}>
+            <h2 className='text-md bg-red-500 w-10/12 text-center rounded-md h-24 rotate-[-45deg] md:text-xl'>{title}</h2>
+          </motion.div>
+          <div className='flex items-center z-10 justify-center'>
+            <div
+              className={`${isDarkMode ? 'bg-slate-600' : 'bg-slate-300'} md:w-96 w-64 rounded-md
+            ${isDarkMode ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+                } transition-transform delay-700 duration-1000'}
+            `}>
+              <Slider asNavFor={nav2} ref={slider1} {...navSettings}>
+                {cards.map((card) =>
+                  <div key={card.id} className='flex items-center justify-center'>
+                    <div className='w-full flex p-4 justify-center items-center'>{card.card}</div>
+                    <div className='flex text-xs cursor-pointer md:text-xl mt-6 items-center justify-center'>{card.desc}</div>
+                  </div>
+                )}
+              </Slider>
             </div>
-            <div className={`${animate ? 'translate-x-[-100%] duration-1000' : ''} bg-slate-800 md:p-10 p-2 gap-4 grid md:text-lg text-xs justify-items-center rounded-md w-32 h-32 md:w-96 md:h-96`}>
-              {cards[currentIndex].card}
-              {cards[currentIndex].desc}
-            </div>
-            <div className={`${animate ? 'translate-x-[-100%] duration-1000' : ''} bg-slate-800 md:p-10 p-2 rounded-md md:w-64 md:h-64 w-20 h-20`}>
-              {cards[futureIndex].card}</div>
-          </div>
-          <div className="flex justify-center mt-4 gap-4">
-            <button onClick={handlePrevious}>
-              Previous
-            </button>
-            <button onClick={handleNext}>Next</button>
           </div>
         </div>
+        <NavCards nav1={nav1} cards={cards} slider2={slider2} isDarkMode={isDarkMode} />
       </div>
     </div>
   );

@@ -1,35 +1,47 @@
 import { forwardRef } from 'react';
 import { useState } from 'react';
-
-const cardData = [
-  { id: 1, text: 'Card 1' },
-  { id: 2, text: 'Card 2' },
-  { id: 3, text: 'Card 3' },
-  { id: 4, text: 'Card 4' },
-  { id: 5, text: 'Card 5' },
-  { id: 6, text: 'Card 6' },
-];
+import Image from 'next/image';
+import enrollment from '../../public/Enrollment System.png'
+import ecommerce from '../../public/Ecommerce.png'
+import matrix from '../../public/Matrix.png'
 
 function Projects({ title }, ref) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [hoveredCard, setHoveredCard] = useState(null);
 
-  const previousIndex = (currentIndex - 1 + cardData.length) % cardData.length;
-  const futureIndex = (currentIndex + 1) % cardData.length;
   return (
     <div ref={ref}>
-      <div className="min-h-screen flex align-center justify-center">
-        <h2>{title}</h2>
-        <div>
-          <div className="flex justify-center">
-            <div className="card">{cardData[previousIndex].text}</div>
-            <div className="card">{cardData[currentIndex].text}</div>
-            <div className="card">{cardData[futureIndex].text}</div>
+      <h2>{title}</h2>
+      <div className="min-h-screen w-full flex items-center justify-center">
+        <div className="grid grid-cols-3 gap-4 my-10 z-10">
+          <div
+            className={`md:w-96 w-30 bg-fixed bg-white`}
+            key={1}
+            onMouseEnter={() => setHoveredCard(1)}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
+            {hoveredCard === 1 ? <div className="bg-slate-300 h-full">This is desc</div> :
+              <Image src={ecommerce} alt='Ecommerce' />
+            }
           </div>
-          <div className="flex justify-center mt-4">
-            <button onClick={() => setCurrentIndex((currentIndex - 1 + cardData.length) % cardData.length)}>
-              Previous
-            </button>
-            <button onClick={() => setCurrentIndex((currentIndex + 1) % cardData.length)}>Next</button>
+          <div
+            className={`md:w-96 w-30 bg-white`}
+            key={2}
+            onMouseEnter={() => setHoveredCard(2)}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
+            {hoveredCard === 2 ? <div className="bg-slate-300 h-full">This is desc</div> :
+              <Image src={enrollment} alt='enrollment' />
+            }
+          </div>
+          <div
+            className={`md:w-96 w-30 bg-white`}
+            key={3}
+            onMouseEnter={() => setHoveredCard(3)}
+            onMouseLeave={() => setHoveredCard(null)}
+          >
+            {hoveredCard === 3 ? <div className="bg-slate-300 h-full">This is desc</div> :
+              <Image src={matrix} alt='matrix' />
+            }
           </div>
         </div>
       </div>
@@ -38,4 +50,3 @@ function Projects({ title }, ref) {
 }
 
 export default forwardRef(Projects);
-

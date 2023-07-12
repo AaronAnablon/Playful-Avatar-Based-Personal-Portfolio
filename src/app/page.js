@@ -5,9 +5,9 @@ import { ThemeProvider } from '../contexts/ThemeContext';
 export default function Home() {
   return (
     <ThemeProvider>
-      <main>
-        <App />
-      </main>
+        <main>
+          <App />
+        </main>
     </ThemeProvider>
   )
 }
