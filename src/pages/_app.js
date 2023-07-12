@@ -5,23 +5,20 @@ import Blog from '@/components/Blog';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
-import Image from 'next/image';
-import man from '../../public/man.gif';
-import standing from '../../public/standing.gif';
 import About from '@/components/About';
 import Message from '@/components/Message';
-import TextMessage from '@/helpers/TextMessage';
+import AnimatedAaron from '@/helpers/AnimatedAaron';
 
 import { FaArrowAltCircleUp } from "react-icons/fa";
 
 export default function App() {
   const { theme } = useTheme();
   const [viewPort, setViewPort] = useState(null);
-  const [message, setMessage] = useState()
+  const [context, setMessage] = useState()
 
-useEffect(() => {
-  console.log(message)
-}, [message])
+  useEffect(() => {
+    console.log('app:', context)
+  }, [context])
 
   const refs = {
     homeRef: useRef(null),
@@ -66,18 +63,11 @@ useEffect(() => {
   }, []);
 
   return (
-    <div className={`${theme} max-w-screen-xl flex flex-col justify-content-center mx-auto`}>
+    <div className={`${theme} max-w-screen-xl relative flex flex-col justify-content-center mx-auto`}>
       <div className='fixed bg-slate-500 z-20 text-white rounded-full bottom-10 right-10' onClick={() => scrollToTop()}>
-        <FaArrowAltCircleUp size={24}/>
+        <FaArrowAltCircleUp size={24} />
       </div>
-      {message && <TextMessage />}
-      <div className='fixed z-0 md:block right-24 top-64 md:w-72 md:h-72 w-28 h-28'>
-        {isWalking ? (
-          <Image src={man} alt="Walking" layout='fill' objectFit='fill' onClick={handleScroll} />
-        ) : (
-          <Image src={standing} alt="Stand" layout='fill' objectFit='fill' onClick={handleScroll} />
-        )}
-      </div>
+      <AnimatedAaron context={context} isWalking={isWalking} handleScroll={handleScroll}/>
       <Header setViewPort={setViewPort} />
       <Blog ref={refs.homeRef} title="Blog" />
       <Message setMessage={setMessage} />

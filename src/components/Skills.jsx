@@ -18,6 +18,7 @@ function Skills({ title }, ref) {
   };
 
   useEffect(() => {
+  
     if (isInView) {
       animate(scope.current, { opacity: 100 })
     } else {
@@ -39,7 +40,7 @@ function Skills({ title }, ref) {
       <div className="h-screen">
         <div className="relative">
           <motion.div ref={scope}>
-            <h2 className='text-md bg-red-500 w-10/12 text-center rounded-md h-24 rotate-[-45deg] md:text-xl'>{title}</h2>
+            <h2 className='text-md bg-red-500 w-24 ml-64 text-center rounded-md h-24 rotate-[-45deg] md:text-xl'>{title}</h2>
           </motion.div>
           <div className='flex items-center z-10 justify-center'>
             <div
