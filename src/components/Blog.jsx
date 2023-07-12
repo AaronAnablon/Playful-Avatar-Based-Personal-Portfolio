@@ -17,7 +17,7 @@ function Blog({ title }, ref) {
               <p>Hire me!</p>
             </div>
           </div>
-          <div className='rounded-full bg-red-700 flex z-40 justify-center'>
+          <div className='rounded-full bg-red-700 overflow-hidden flex z-40 justify-center'>
             <Image src={profile} alt='profile' />
           </div>
         </div>
