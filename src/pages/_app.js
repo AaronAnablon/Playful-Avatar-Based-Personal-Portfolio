@@ -8,12 +8,21 @@ import Contact from '@/components/Contact';
 import Image from 'next/image';
 import man from '../../public/man.gif';
 import standing from '../../public/standing.gif';
+import About from '@/components/About';
+import Message from '@/components/Message';
+import TextMessage from '@/helpers/TextMessage';
 
 import { FaArrowAltCircleUp } from "react-icons/fa";
 
 export default function App() {
   const { theme } = useTheme();
   const [viewPort, setViewPort] = useState(null);
+  const [message, setMessage] = useState()
+
+useEffect(() => {
+  console.log(message)
+}, [message])
+
   const refs = {
     homeRef: useRef(null),
     skillsRef: useRef(null),
@@ -51,7 +60,6 @@ export default function App() {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -62,7 +70,8 @@ export default function App() {
       <div className='fixed bg-slate-500 z-20 text-white rounded-full bottom-10 right-10' onClick={() => scrollToTop()}>
         <FaArrowAltCircleUp size={24}/>
       </div>
-      <div className='fixed hidden md:block right-24 top-64' style={{ width: '18rem', height: '18rem' }}>
+      {message && <TextMessage />}
+      <div className='fixed z-0 md:block right-24 top-64 md:w-72 md:h-72 w-28 h-28'>
         {isWalking ? (
           <Image src={man} alt="Walking" layout='fill' objectFit='fill' onClick={handleScroll} />
         ) : (
@@ -71,9 +80,11 @@ export default function App() {
       </div>
       <Header setViewPort={setViewPort} />
       <Blog ref={refs.homeRef} title="Blog" />
+      <Message setMessage={setMessage} />
       <Skills ref={refs.skillsRef} title="Skills" />
       <Projects ref={refs.projectsRef} title="Projects" />
       <Contact ref={refs.contactRef} title="Contact" />
+      <About ref={refs.contactRef} title="About" />
     </div>
   );
 }

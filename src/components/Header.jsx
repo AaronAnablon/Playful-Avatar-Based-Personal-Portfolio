@@ -6,6 +6,7 @@ import Image from 'next/image';
 import logo from '../../public/logo.png'
 import { GiHamburgerMenu, GiTireIronCross } from "react-icons/gi";
 
+
 const Header = ({ setViewPort }) => {
     const { isDarkMode, setIsDarkMode } = useTheme();
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,6 +29,8 @@ const Header = ({ setViewPort }) => {
             <div className={`grid md:grid-cols-12 grid-cols-4 justify-start items-center ${isMobileMenuOpen ? 'hidden': ''}`}>
                 <Image onClick={() => handleScrollToSection("homeRef")} className='bg-white rounded-full' src={logo} alt='logo' />
             </div>
+          
+          
             <div className={`flex justify-end items-center space-x-4 md:space-x-8 ${isMobileMenuOpen ? 'flex-col gap-3 w-max ml-12 p-24 bg-slate-600 md:flex-row' : ''}`}>
                 <div className="md:hidden cursor-pointer" onClick={toggleMobileMenu}>
                     {isMobileMenuOpen ? <GiTireIronCross size={28} className='fixed top-3 right-14'/> : <GiHamburgerMenu size={28} />}
