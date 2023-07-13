@@ -8,23 +8,21 @@ import Contact from '@/components/Contact';
 import About from '@/components/About';
 import Message from '@/components/Message';
 import AnimatedAaron from '@/helpers/AnimatedAaron';
-
+import Footer from '@/components/Footer';
 import { FaArrowAltCircleUp } from "react-icons/fa";
+
 
 export default function App() {
   const { theme } = useTheme();
   const [viewPort, setViewPort] = useState(null);
   const [context, setMessage] = useState()
 
-  useEffect(() => {
-    console.log('app:', context)
-  }, [context])
-
   const refs = {
     homeRef: useRef(null),
     skillsRef: useRef(null),
     projectsRef: useRef(null),
     contactRef: useRef(null),
+    aboutRef: useRef(null)
   };
 
   useEffect(() => {
@@ -69,12 +67,13 @@ export default function App() {
       </div>
       <AnimatedAaron context={context} isWalking={isWalking} handleScroll={handleScroll}/>
       <Header setViewPort={setViewPort} />
-      <Blog ref={refs.homeRef} title="Blog" />
+      <Blog ref={refs.homeRef} setViewPort={setViewPort} title="Blog" />
       <Message setMessage={setMessage} />
       <Skills ref={refs.skillsRef} title="Skills" />
       <Projects ref={refs.projectsRef} title="Projects" />
       <Contact ref={refs.contactRef} title="Contact" />
-      <About ref={refs.contactRef} title="About" />
+      <About ref={refs.aboutRef} title="About" />
+      <Footer setViewPort={setViewPort} />
     </div>
   );
 }

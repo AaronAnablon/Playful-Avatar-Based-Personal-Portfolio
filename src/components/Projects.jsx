@@ -1,48 +1,37 @@
 import { forwardRef } from 'react';
 import { useState } from 'react';
 import Image from 'next/image';
-import enrollment from '../../public/Enrollment System.png'
-import ecommerce from '../../public/Ecommerce.png'
-import matrix from '../../public/Matrix.png'
+import ProjectCards from '@/helpers/ProjectCards';
+import { IoIosDocument,IoIosOpen } from "react-icons/io";
+
 
 function Projects({ title }, ref) {
   const [hoveredCard, setHoveredCard] = useState(null);
-
   return (
     <div ref={ref}>
       <h2>{title}</h2>
       <div className="min-h-screen w-full flex items-center justify-center">
-        <div className="grid grid-cols-3 gap-4 my-10 z-10">
-          <div
-            className={`md:w-96 w-30 bg-fixed bg-white`}
-            key={1}
-            onMouseEnter={() => setHoveredCard(1)}
-            onMouseLeave={() => setHoveredCard(null)}
-          >
-            {hoveredCard === 1 ? <div className="bg-slate-300 h-full">This is desc</div> :
-              <Image src={ecommerce} alt='Ecommerce' />
-            }
-          </div>
-          <div
-            className={`md:w-96 w-30 bg-white`}
-            key={2}
-            onMouseEnter={() => setHoveredCard(2)}
-            onMouseLeave={() => setHoveredCard(null)}
-          >
-            {hoveredCard === 2 ? <div className="bg-slate-300 h-full">This is desc</div> :
-              <Image src={enrollment} alt='enrollment' />
-            }
-          </div>
-          <div
-            className={`md:w-96 w-30 bg-white`}
-            key={3}
-            onMouseEnter={() => setHoveredCard(3)}
-            onMouseLeave={() => setHoveredCard(null)}
-          >
-            {hoveredCard === 3 ? <div className="bg-slate-300 h-full">This is desc</div> :
-              <Image src={matrix} alt='matrix' />
-            }
-          </div>
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-4 my-10 z-10">
+          {ProjectCards && ProjectCards.map((card, index) => (
+            <div
+              className={`h-96 w-1/2 bg-fixed bg-white`}
+              key={card.id}
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
+            >
+              {hoveredCard === index ? (
+                <div className="bg-slate-300 h-full text-slate-600 p-5 grid grid-cols-1 justify-center items-center">
+                  {card.desc}
+                  <div className='flex justify-center gap-10 items-center'>
+                    <IoIosOpen size={45}/>
+                    <IoIosDocument size={40}/>
+                    </div>
+                </div>
+              ) : (
+                <Image src={card.image} alt={card.name} />
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
