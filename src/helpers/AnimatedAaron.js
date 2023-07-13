@@ -4,9 +4,6 @@ import standing from '../../public/standing.gif';
 import { useEffect } from 'react';
 
 const AnimatedAaron = ({ context, isWalking, handleScroll }) => {
-    useEffect(() => {
-        console.log('TextContext:', context)
-    }, [context])
     return (
         <div className={``}>
             <div className='fixed z-0 right-28 top-64 flex justify-center'>
@@ -27,7 +24,7 @@ const AnimatedAaron = ({ context, isWalking, handleScroll }) => {
                 }
                 <div className='fixed z-0 right-0 top-64'>
                     {isWalking ? (
-                        <Image src={man} alt="Walking" onClick={handleScroll} />
+                        <Image src={man} alt="Walking" onClick={handleScroll} priority={true}/>
                     ) : (
 
                         <Image src={standing} alt="Stand" onClick={handleScroll} />

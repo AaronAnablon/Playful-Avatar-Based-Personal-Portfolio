@@ -44,14 +44,12 @@ function Skills({ title }, ref) {
           </motion.div>
           <div className='flex items-center z-10 justify-center'>
             <div
-              className={`${isDarkMode ? 'bg-slate-600' : 'bg-slate-300'} md:w-96 w-64 rounded-md
-            ${isDarkMode ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-                } transition-transform delay-700 duration-1000'}
+              className={`${isDarkMode ? 'bg-slate-600' : 'bg-slate-300'} md:w-96 w-64 rounded-md transition-transform delay-700 duration-1000'}
             `}>
               <Slider asNavFor={nav2} ref={slider1} {...navSettings}>
                 {cards.map((card) =>
                   <div key={card.id} className='flex items-center justify-center'>
-                    <div className='w-full flex p-4 justify-center items-center'>{card.card}</div>
+                    <div className='w-11/12 h-1/2 flex p-4 justify-center items-center'>{card.card}</div>
                     <div className='flex text-xs cursor-pointer md:text-xl mt-6 items-center justify-center'>{card.desc}</div>
                   </div>
                 )}
