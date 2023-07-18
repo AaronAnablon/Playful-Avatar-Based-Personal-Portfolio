@@ -4,6 +4,7 @@ function Contact({ title }, ref) {
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(event) {
+   
     event.preventDefault();
     setLoading(true);
 
@@ -12,8 +13,8 @@ function Contact({ title }, ref) {
       email: String(event.target.email.value),
       message: String(event.target.message.value),
     };
-
-    const response = await fetch("/api/contact", {
+    console.log(data)
+    const response = await fetch("/api/mail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
