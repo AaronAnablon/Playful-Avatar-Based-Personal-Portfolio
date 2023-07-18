@@ -9,11 +9,10 @@ function Contact({ title }, ref) {
     setLoading(true);
 
     const data = {
-      name: String(event.target.name.value),
-      email: String(event.target.email.value),
-      message: String(event.target.message.value),
+      name: event.target.name.value,
+      email: event.target.email.value,
+      message: event.target.message.value,
     };
-    console.log(data)
     const response = await fetch("/api/mail", {
       method: "POST",
       headers: {
@@ -21,16 +20,14 @@ function Contact({ title }, ref) {
       },
       body: JSON.stringify(data),
     });
-
     if (response.ok) {
-      console.log("Message sent successfully");
+      console.log('Sent Successfully')
       setLoading(false);
       event.target.name.value = "";
       event.target.email.value = "";
       event.target.message.value = "";
-    }
-    if (!response.ok) {
-      console.log("Error sending message");
+    } else {
+      console.log(response);
       setLoading(false);
     }
   }

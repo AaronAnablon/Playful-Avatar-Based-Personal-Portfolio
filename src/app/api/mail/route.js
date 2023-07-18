@@ -1,39 +1,21 @@
 import transporter from "@/server/mailer";
+import { NextResponse } from "next/server";
 
 export async function POST(req) {
-  if (req.method === 'POST') {
-    const { data } = req.body.data;
-    console.log(data)
-    if (!req.headers['headers']) {
-      return {
-        statusCode: 400,
-        body: 'Missing required header: x-custom-header',
-      };
-    }
+
+    const data = await req.json()
 
     try {
-      await transporter.sendMail({
-        from: data.sender,
+      transporter.sendMail({
+        from: data.email,
         to: process.env.EMAIL,
-        subject: data.senderName,
-        text: data.text,
+        subject: data.name,
+        text: data.message,
       });
 
-      return {
-        statusCode: 200,
-        body: 'Email sent successfully',
-      };
+      return NextResponse.json({ msg: "Successfuly Sent " ,status:200})
     } catch (error) {
       console.error('Error sending email:', error);
-      return {
-        statusCode: 500,
-        body: 'Failed to send email',
-      };
+      return NextResponse.json({ error: "Error on '/api/mail': " + error ,status:400})
     }
   }
-
-  return {
-    statusCode: 405,
-    body: 'Method Not Allowed',
-  };
-}
