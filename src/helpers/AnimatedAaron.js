@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import man from '../../public/man.gif';
 import standing from '../../public/standing.gif';
-import { useEffect } from 'react';
 
 const AnimatedAaron = ({ context, isWalking, handleScroll }) => {
     return (
@@ -26,7 +25,6 @@ const AnimatedAaron = ({ context, isWalking, handleScroll }) => {
                     {isWalking ? (
                         <Image src={man} alt="Walking" onClick={handleScroll} priority={true}/>
                     ) : (
-
                         <Image src={standing} alt="Stand" onClick={handleScroll} />
                     )}
                 </div>

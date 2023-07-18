@@ -6,34 +6,30 @@ function About({ title }, ref) {
   return (
     <div ref={ref}>
       <div className="min-h-screen flex flex-col align-center justify-center">
-        <h2 className='text-6 bg-red-500 text-slate-200 flex justify-center'>{title}</h2>
-        {AboutText.map((text) =>
-          <div className='grid grid-cols-1'>
-            <h2 className='text-4xl'>{text.title}</h2>
-            <div key={text.id} className='grid-cols-1'>
-              <div className='flex h-72'>
-                <div className='rounded-r-full w-1/2 overflow-hidden'>
-                  <Image className='object-fit' src={text.image1} alt={text.title} />
-                </div>
-                <p className='indent-8 w-1/2 mx-6'>{text.paragraph0}</p>
-              </div>
-              <div className='flex h-72'>
-                <p className='indent-8 w-1/2 mx-6'>{text.paragraph2}</p>
-                <div className='rounded-l-full w-1/2 overflow-hidden'>
-                  <Image className='object-fit' src={text.image0} alt={text.title} />
-                </div>
-              </div>
-              <div className='flex h-72'>
-                <div className='rounded-r-full w-1/2 overflow-hidden'>
-                  <Image className='object-fit' src={text.image2} alt={text.title} />
-                </div>
-                <p className='indent-8 w-1/2 mx-6'>{text.paragraph1}</p>
-              </div>
+        <h2 className='text-xl'>{title}</h2>
+        <div className='grid grid-cols-2 justify-center'>
+          <div className="grid grid-cols-2">
+            <div className="relative h-full flex">
+              <Image src={AboutText.image3} alt="Image 3" className="absolute bottom-0 right-0 w-1/2 h-1/2 object-cover border-4" />
+              <Image src={AboutText.image2} alt="Image 2" className="absolute m-4 top-32 left-0 w-1/2 h-1/2 object-cover border-4" />
+              <Image src={AboutText.image1} alt="Image 1" className="absolute top-0 right-0 w-1/2 h-1/2 object-cover border-4" />
+            </div>
+            <div className="relative h-full flex">
+              <Image src={AboutText.image4} alt="Image 1" className="absolute top-0 left-0 w-1/2 h-1/2 object-cover border-4" />
+              <Image src={AboutText.image5} alt="Image 2" className="absolute m-4 top-32 right-0 w-1/2 h-1/2 object-cover border-4" />
+              <Image src={AboutText.image6} alt="Image 3" className="absolute bottom-0 left-0 w-1/2 h-1/2 object-cover border-4" />
             </div>
           </div>
-        )}
+          <div className='indent-6 mx-10'>
+            <p>{AboutText.p1}</p>
+            <p>{AboutText.p2}</p>
+            <p>{AboutText.p3}</p>
+            <p>{AboutText.p4}</p>
+            <p>{AboutText.p5}</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </div >
   );
 }
 
