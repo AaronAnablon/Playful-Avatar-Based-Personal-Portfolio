@@ -15,7 +15,9 @@ import { FaArrowAltCircleUp } from "react-icons/fa";
 export default function App() {
   const { theme } = useTheme();
   const [viewPort, setViewPort] = useState(null);
-  const [context, setMessage] = useState()
+  const [scrolledText, setScrolledText] = useState()
+  const [statusText, setStatusText] = useState(false)
+  const [isWalking, setIsWalking] = useState(false);
 
   const refs = {
     homeRef: useRef(null),
@@ -24,13 +26,11 @@ export default function App() {
     contactRef: useRef(null),
     aboutRef: useRef(null)
   };
+  const scrollTimerRef = useRef(null);
 
   useEffect(() => {
     refs[viewPort]?.current?.scrollIntoView({ behavior: 'smooth' });
   }, [viewPort, refs]);
-
-  const [isWalking, setIsWalking] = useState(false);
-  const scrollTimerRef = useRef(null);
 
   const handleScroll = () => {
     setIsWalking(true);
@@ -49,6 +49,18 @@ export default function App() {
     }, 200);
   };
 
+  useEffect(() => {
+    if (statusText) {
+      const timeout = setTimeout(() => {
+        setStatusText(false);
+      }, 3000);
+
+      return () => {
+        clearTimeout(timeout); 
+      };
+    }
+  }, [statusText]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -65,13 +77,13 @@ export default function App() {
       <div className='fixed bg-slate-500 z-20 text-white rounded-full bottom-10 right-10' onClick={() => scrollToTop()}>
         <FaArrowAltCircleUp size={24} />
       </div>
-      <AnimatedAaron context={context} isWalking={isWalking} handleScroll={handleScroll}/>
+      <AnimatedAaron statusText={statusText} scrolledText={scrolledText} isWalking={isWalking} handleScroll={handleScroll}/>
       <Header setViewPort={setViewPort} />
       <Blog ref={refs.homeRef} setViewPort={setViewPort} title="Blog" />
-      <Message setMessage={setMessage} />
+      <Message setScrolledText={setScrolledText} />
       <Skills ref={refs.skillsRef} title="Skills" />
       <Projects ref={refs.projectsRef} title="Projects" />
-      <Contact ref={refs.contactRef} title="Contact" />
+      <Contact setStatusText={setStatusText} ref={refs.contactRef} title="Contact" />
       <About ref={refs.aboutRef} title="About" />
       <Footer setViewPort={setViewPort} />
     </div>

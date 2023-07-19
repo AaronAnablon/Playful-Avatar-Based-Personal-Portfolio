@@ -1,6 +1,6 @@
 import { forwardRef, useState } from 'react';
 
-function Contact({ title }, ref) {
+function Contact({ title, setStatusText }, ref) {
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(event) {
@@ -22,6 +22,7 @@ function Contact({ title }, ref) {
     });
     if (response.ok) {
       console.log('Sent Successfully')
+      setStatusText(true)
       setLoading(false);
       event.target.name.value = "";
       event.target.email.value = "";
@@ -32,9 +33,9 @@ function Contact({ title }, ref) {
     }
   }
   return (
-    <div ref={ref}>
-      <div className="min-h-screen flex flex-col items-center justify-center">
-        <h2>{title}</h2>
+    <div ref={ref}> 
+     <h2 className='text-4xl ml-10 flex justify-start'>{title} ---</h2>
+      <div className="flex flex-col items-center justify-center">
         <form onSubmit={handleSubmit} className='bg-slate-400 lg:w-2/5 md:w-8/12 w-10/12 w- h-max my-10 rounded-md p-10'>
           <div className="w-full flex flex-col md:my-4">
             <label className="font-bold text-gray-800" htmlFor="name">
