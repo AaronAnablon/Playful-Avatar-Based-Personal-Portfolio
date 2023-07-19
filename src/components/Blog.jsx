@@ -19,7 +19,7 @@ function Blog({ title, setViewPort }, ref) {
               <h1 className='lg:text-8xl text-6xl'>I AM AARON ANABLON</h1>
               <p>Full Stack Web Developer</p>
               <button
-                className='rounded-full flex items-center text-xl text-slate-700 m-10 p-2 bg-slate-300 animate-bounce'
+                className='rounded-full flex items-center text-xl text-slate-700 m-10 p-y2 px-6 bg-slate-300 animate-bounce'
                 onClick={() => handleScrollToSection("contactRef")}>
                 Contact me
                 <IoIosArrowRoundForward size={34} />

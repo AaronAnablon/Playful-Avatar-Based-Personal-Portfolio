@@ -1,17 +1,17 @@
 import { useEffect } from "react";
 import { useAnimate, useInView } from "framer-motion";
 
-const TextMessage = ({setMessage}) => {
+const TextMessage = ({ setScrolledText }) => {
     const [scope, animate] = useAnimate();
     const isInView = useInView(scope, { threshold: 0.5 });
     useEffect(() => {
       
         if (isInView) {
             animate(scope.current, { opacity: 1 });
-            setMessage(true)
+            setScrolledText(true)
         } else {
             animate(scope.current, { opacity: 0 });
-            setMessage(false)
+            setScrolledText(false)
         }
     }, [isInView]);
 

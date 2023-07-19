@@ -6,7 +6,7 @@ function About({ title }, ref) {
   return (
     <div ref={ref}>
       <div className="min-h-screen flex flex-col align-center justify-center">
-        <h2 className='text-xl'>{title}</h2>
+        <h2 className='text-4xl ml-10 flex justify-star'>{title} ---</h2>
         <div className='grid grid-cols-2 justify-center'>
           <div className="grid grid-cols-2">
             <div className="relative h-full flex">

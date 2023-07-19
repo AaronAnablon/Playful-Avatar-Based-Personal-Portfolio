@@ -1,37 +1,56 @@
 import enrollment from '../../public/Enrollment System.png'
 import ecommerce from '../../public/Ecommerce.png'
 import matrix from '../../public/Matrix.png'
-
+import phoneEcommerce from '../../public/phoneEcommerce.png'
+import tabletEcommerce from '../../public/tabletEcommerce.png'
 
 const ProjectCards = [
     {
         id: 0, name: 'Ecommerce',
-        image: ecommerce,
-        desc: 'This is developed using MERN stack with different features including Rider and Seller web Application'
+        url: 'https://moon-delivery.vercel.app',
+        desktop: ecommerce,
+        phone: phoneEcommerce,
+        tablet: tabletEcommerce,
+        desc: 'E-commerce website developed using MERN stack with different features including Rider and Seller web Application. This web Application also offers booking and other services like specifying the items you want the rider I developed this for the students of Bachelor of Science in Business Administration in IFSU Lagawe for their business proposal.'
     },
     {
         id: 1, name: 'Enrollment',
-        image: enrollment,
-        desc: 'This is developed using C# with different features including SMS integration and and support to printing hard copies of grades and other school credentials.It is a Desktop Application.'
+        url: 'https://moon-delivery.vercel.app',
+        desktop: enrollment,
+        phone: '',
+        tablet: '',
+        desc: 'Enrollment system developed using C# with different features including SMS integration and and support to printing hard copies of grades and other school credentials. This is my capstone project. The Application only supports Desktop.'
     },
     {
         id: 2, name: 'Matrix',
-        image: matrix,
-        desc: 'This is developed using C# with different features including easy access of student files and support to printing hard copies of credentials. It is a Desktop Application.'
+        url: 'https://moon-delivery.vercel.app',
+        desktop: matrix,
+        phone: '',
+        tablet: '',
+        desc: 'Grantee Information Matrix System. Developed using C# with different features including easy access of student files and support to printing hard copies of credentials. I developed this furing my OJT. The Application only supports Desktop.'
     },
     {
         id: 3, name: 'Ecommerce',
-        image: ecommerce,
+        url: 'https://moon-delivery.vercel.app',
+        desktop: ecommerce,
+        phone: ecommerce,
+        tablet: ecommerce,
         desc: 'This is developed using MERN stack with different features including Rider and Seller web Application'
     },
     {
         id: 4, name: 'Enrollment',
-        image: enrollment,
+        url: 'https://moon-delivery.vercel.app',
+        desktop: enrollment,
+        phone: enrollment,
+        tablet: enrollment,
         desc: 'This is developed using C# with different features including SMS integration and and support to printing hard copies of grades and other school credentials.It is a Desktop Application.'
     },
     {
         id: 5, name: 'Matrix',
-        image: matrix,
+        url: 'https://moon-delivery.vercel.app',
+        desktop: matrix,
+        phone: matrix,
+        tablet: matrix,
         desc: 'This is developed using C# with different features including easy access of student files and support to printing hard copies of credentials. It is a Desktop Application.'
     },
 ]
