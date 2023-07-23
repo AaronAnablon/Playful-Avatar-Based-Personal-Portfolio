@@ -1,4 +1,3 @@
-import { useTheme } from '../contexts/ThemeContext';
 import logo from '../../public/logo.png'
 import Image from 'next/image';
 import { IoIosMail } from 'react-icons/io';
@@ -7,11 +6,8 @@ import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import me from '../../public/me.webp'
 
 const Footer = ({ setViewPort }) => {
-    const { theme } = useTheme()
-
-    const handleScrollToSection = (ref) => {
-        setViewPort(ref)
-        setMobileMenuOpen(false);
+    const handleScrollToSection = (reference) => {
+        setViewPort(reference)
     }
     return (
         <>
