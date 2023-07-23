@@ -16,7 +16,7 @@ const Footer = ({ setViewPort }) => {
                     <Image width={60} onClick={() => handleScrollToSection("homeRef")} className='bg-white rounded-full' src={logo} alt='logo' />
                 </div>
                 <div className='text-center'>
-                    "It can't beat hardwork and perseverance. Try and inspire regardless of challenges."
+                    "It can&ldquo;t beat hardwork and perseverance. Try and inspire regardless of challenges."
                 </div>
                 <div className='flex gap-4 justify-center items-center'>
                     <IoIosMail size={38} />
