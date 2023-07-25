@@ -3,6 +3,9 @@ import ecommerce from '../../public/Ecommerce.png'
 import matrix from '../../public/Matrix.png'
 import phoneEcommerce from '../../public/phoneEcommerce.png'
 import tabletEcommerce from '../../public/tabletEcommerce.png'
+import DesktopAiChatbot from '../../public/DesktopAiChatbot.png'
+import phoneAiChatbot from '../../public/phoneAiChatbot.png'
+import tabletAiChatbot from '../../public/tabletAiChatbot.png'
 
 const ProjectCards = [
     {
@@ -30,28 +33,12 @@ const ProjectCards = [
         desc: 'Grantee Information Matrix System. Developed using C# with different features including easy access of student files and support to printing hard copies of credentials. I developed this furing my OJT. The Application only supports Desktop.'
     },
     {
-        id: 3, name: 'Ecommerce',
-        url: 'https://moon-delivery.vercel.app',
-        desktop: ecommerce,
-        phone: ecommerce,
-        tablet: ecommerce,
-        desc: 'This is developed using MERN stack with different features including Rider and Seller web Application'
-    },
-    {
-        id: 4, name: 'Enrollment',
-        url: 'https://moon-delivery.vercel.app',
-        desktop: enrollment,
-        phone: enrollment,
-        tablet: enrollment,
-        desc: 'This is developed using C# with different features including SMS integration and and support to printing hard copies of grades and other school credentials.It is a Desktop Application.'
-    },
-    {
-        id: 5, name: 'Matrix',
-        url: 'https://moon-delivery.vercel.app',
-        desktop: matrix,
-        phone: matrix,
-        tablet: matrix,
-        desc: 'This is developed using C# with different features including easy access of student files and support to printing hard copies of credentials. It is a Desktop Application.'
+        id: 3, name: 'Ai Chatbot',
+        url: 'https://aaron-projects-ai-chatbot.vercel.app',
+        desktop: DesktopAiChatbot,
+        phone: phoneAiChatbot,
+        tablet: tabletAiChatbot,
+        desc: 'This is developed using Next Js and the OpenAi Api version 3.5. The website provides example of correct prompts and response to get the correct or desired output. Feel free to experiment ai chatbot prompts here.'
     },
 ]
 
