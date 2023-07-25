@@ -38,7 +38,7 @@ const ProjectCards = [
         desktop: DesktopAiChatbot,
         phone: phoneAiChatbot,
         tablet: tabletAiChatbot,
-        desc: 'This is developed using Next Js and the OpenAi Api version 3.5. The website provides example of correct prompts and response to get the correct or desired output. Feel free to experiment ai chatbot prompts here.'
+        desc: 'This is developed using Next Js and OpenAi Api version 3.5. The website provides example of correct prompts and response to get the correct or desired output. Feel free to experiment ai chatbot prompts here.'
     },
 ]
 
