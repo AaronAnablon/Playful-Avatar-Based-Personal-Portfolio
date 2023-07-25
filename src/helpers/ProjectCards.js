@@ -3,7 +3,7 @@ import ecommerce from '../../public/Ecommerce.png'
 import matrix from '../../public/Matrix.png'
 import phoneEcommerce from '../../public/phoneEcommerce.png'
 import tabletEcommerce from '../../public/tabletEcommerce.png'
-import DesktopAiChatbot from '../../public/DesktopAiChatbot.png'
+import DesktopAiChatbot from '../../public/DesktopAIChatbot.png'
 import phoneAiChatbot from '../../public/phoneAiChatbot.png'
 import tabletAiChatbot from '../../public/tabletAiChatbot.png'
 
