@@ -1,10 +1,11 @@
 import { forwardRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 function Contact({ title, setStatusText }, ref) {
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(event) {
-   
+
     event.preventDefault();
     setLoading(true);
 
@@ -33,8 +34,14 @@ function Contact({ title, setStatusText }, ref) {
     }
   }
   return (
-    <div ref={ref}> 
-     <h2 className='text-4xl ml-10 flex justify-start'>{title} ---</h2>
+    <div ref={ref}>
+      <motion.h2
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -100 }}
+        transition={{ duration: 2, delay: 1 }}
+        className='text-4xl ml-10 flex justify-start'>{title} ---
+      </motion.h2>
       <div className="flex flex-col items-center justify-center">
         <form onSubmit={handleSubmit} className='bg-slate-400 lg:w-2/5 md:w-8/12 w-10/12 w- h-max my-10 rounded-md p-10'>
           <div className="w-full flex flex-col md:my-4">
@@ -78,12 +85,16 @@ function Contact({ title, setStatusText }, ref) {
               className="w-full p-4 border rounded-md text-slate-700 border-gray-100 "
             />
           </div>
-          <button
+          <motion.button
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            exit={{ scale: 0 }}
+            transition={{ duration: 2, delay: 1 }}
             type="submit"
             disabled={loading}
             className="px-4 py-2 w-40 bg-gray-700 rounded-md disabled:bg-gray-400 disabled:text-gray-100 text-white font-medium mt-4">
             Send Message
-          </button>
+          </motion.button>
         </form>
       </div>
     </div>
