@@ -20,7 +20,7 @@ function Projects({ title }, ref) {
         <h2 className='text-4xl ml-10 flex justify-start'>{title} ---</h2>
       </motion.h2>
       <div className="h-max w-full mb-40 lg:mb-0 flex items-center justify-center">
-        <div className='grid grid-cols-1 gap-48'>
+        <div className='grid mb-24 grid-cols-1 gap-48'>
           {ProjectCards && ProjectCards.map((card) => (
             <div className={`grid lg:grid-cols-2 grid-cols-1`} key={card.id}>
               <div className='flex flex-col h-full justify-center items-center mx-6'>
