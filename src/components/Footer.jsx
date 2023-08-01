@@ -4,11 +4,19 @@ import { IoIosMail } from 'react-icons/io';
 import { AiFillGithub } from "react-icons/ai";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import me from '../../public/me.webp'
+import Link from 'next/link';
 
 const Footer = ({ setViewPort }) => {
     const handleScrollToSection = (reference) => {
         setViewPort(reference)
     }
+    const handleSendEmail = () => {
+        const recipientEmail = 'aaronanablon6@gmail.com';
+        const subject = 'Hi Aaron! Can we schedule a meeting?';
+        const encodedSubject = encodeURIComponent(subject);
+        const mailtoLink = `mailto:${recipientEmail}?subject=${encodedSubject}`;
+        window.open(mailtoLink, '_blank');
+      };
     return (
         <>
             <div className={`bg-slate-600 z-10 py-10 grid md:grid-cols-4 text-white grid-cols-1 gap-4 items-center`}>
@@ -19,10 +27,10 @@ const Footer = ({ setViewPort }) => {
                 &quot;It can&ldquo;t beat hardwork and perseverance. Try and inspire regardless of challenges.&ldquo;
                 </div>
                 <div className='flex gap-4 justify-center items-center'>
-                    <IoIosMail size={38} />
-                    <AiFillGithub size={34} />
-                    <BsFacebook size={28} />
-                    <BsLinkedin size={28} />
+                   <button onClick={handleSendEmail}><IoIosMail size={38} /></button> 
+                   <Link href='https://github.com/AaronAnablon'><AiFillGithub size={34} /></Link>  
+                   <Link href='https://www.facebook.com/techibot'><BsFacebook size={28} /></Link>   
+                   <Link href='https://www.linkedin.com/in/aaronpanablon'><BsLinkedin size={28} /></Link>   
                 </div>
                 <div className='flex justify-center'>
                     <Image width={100} src={me} alt='me' />
