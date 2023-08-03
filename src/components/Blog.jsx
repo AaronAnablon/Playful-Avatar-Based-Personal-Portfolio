@@ -13,7 +13,7 @@ function Blog({ title, setViewPort }, ref) {
   return (
     <div ref={ref}>
       <div className="h-max flex justify-cente mt-24">
-        <div className={`${theme} grid sm:grid-cols-1 md:grid-cols-2 z-30`}>
+        <div className={`${theme} bg-gradient-to-r from-blue-300 to-gray-200 grid sm:grid-cols-1 md:grid-cols-2 z-30`}>
           <div className='p-4 flex md:ml-10 ml-0 items-center'>
             <div>
               <p>Hello! You found me.</p>
