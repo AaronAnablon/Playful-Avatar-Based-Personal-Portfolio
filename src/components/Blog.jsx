@@ -18,14 +18,14 @@ function Blog({ title, setViewPort }, ref) {
             <div>
               <p>Hello! You found me.</p>
               <motion.h1
-                initial={{ x: -100 }}
-                whileInView={{ x: 0 }}
-                exit={{ x: -100 }}
-                transition={{ duration: 1, delay: 1 }}
+                initial={{ opacity: 0,x: -100 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                exit={{ x: 100, opacity: 0 }}
+                transition={{ type: 'spring' }}
                 className='lg:text-8xl text-6xl'>I AM AARON ANABLON</motion.h1>
               <p>Full Stack Web Developer</p>
               <button
-                className='rounded-full flex items-center text-xl text-slate-700 m-10 p-y2 px-6 bg-slate-300 animate-bounce'
+                className='rounded-full flex items-center text-xl text-slate-700 m-10 p-4 bg-slate-300 animate-bounce'
                 onClick={() => handleScrollToSection("contactRef")}>
                 Contact me
                 <IoIosArrowRoundForward size={34} />
@@ -36,7 +36,7 @@ function Blog({ title, setViewPort }, ref) {
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             exit={{ scale: 0 }}
-            transition={{ duration: 2, delay: 1 }}
+            transition={{ type: 'spring' }}
             className='rounded-full bg-red-700 overflow-hidden flex z-40 px-10 justify-center'>
             <Image src={profile} alt='profile' />
           </motion.div>

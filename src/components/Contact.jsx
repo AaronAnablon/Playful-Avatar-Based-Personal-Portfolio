@@ -39,7 +39,7 @@ function Contact({ title, setStatusText }, ref) {
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
-        transition={{ duration: 2, delay: 1 }}
+        transition={{delay: 1, type: 'spring' }}
         className='text-4xl ml-10 flex justify-start'>{title} ---
       </motion.h2>
       <div className="flex flex-col items-center justify-center">

@@ -73,8 +73,8 @@ export default function App() {
   }, []);
 
   return (
-    <>
-      <div className={`${theme} max-w-screen-xl relative flex flex-col justify-content-center mx-auto`}>
+    <div className={`${theme}`}>
+      <div className={` max-w-screen-xl relative flex flex-col justify-content-center mx-auto`}>
         <div className='fixed bg-slate-500 z-20 text-white rounded-full bottom-10 right-10' onClick={() => scrollToTop()}>
           <FaArrowAltCircleUp size={24} />
         </div>
@@ -90,6 +90,6 @@ export default function App() {
           <Footer setViewPort={setViewPort} />
         </Suspense>
       </div>
-    </>
+    </div>
   );
 }

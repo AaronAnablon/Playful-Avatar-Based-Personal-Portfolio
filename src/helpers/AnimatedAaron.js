@@ -1,13 +1,19 @@
 import Image from 'next/image';
 import man from '../../public/man.gif';
 import standing from '../../public/standing.gif';
+import { motion } from 'framer-motion';
 
 const AnimatedAaron = ({ scrolledText, isWalking, handleScroll, statusText }) => {
     return (
         <div>
             <div className='fixed z-0 right-28 top-64 flex justify-center'>
                 {scrolledText &&
-                    <div className={`fixed top-44 md:top-60 lg:left-20 xl:left-56 md:left-8 left-3 flex items-center md:w-5/6 w-9/12`}>
+                    <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        exit={{ scale: 0 }}
+                        transition={{ type: 'spring' }}
+                        className={`fixed top-44 md:top-60 lg:left-20 xl:left-56 md:left-8 left-3 flex items-center md:w-5/6 w-9/12`}>
                         <div className="text-lg bg-blue-200 text-slate-500 rounded-lg p-10">
                             Ohh! You scrolled. Scroll down and let us see what Aaron have.
                         </div>
@@ -18,7 +24,7 @@ const AnimatedAaron = ({ scrolledText, isWalking, handleScroll, statusText }) =>
                         md:border-l-[12rem] border-l-blue-200
                         md:border-b-[3rem] border-b-transparent"
                         />
-                    </div>
+                    </motion.div>
                 }
                 {statusText &&
                     <div className={`fixed top-44 md:top-60 lg:left-20 xl:left-56 md:left-8 left-3 flex items-center md:w-5/6 w-9/12`}>
