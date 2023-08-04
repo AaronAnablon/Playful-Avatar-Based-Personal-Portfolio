@@ -14,7 +14,7 @@ const ProjectCards = [
         desktop: ecommerce,
         phone: phoneEcommerce,
         tablet: tabletEcommerce,
-        desc: 'E-commerce website developed using MERN stack with different features including Rider and Seller web Application. This web Application also offers booking and other services like specifying the items you want the rider I developed this for the students of Bachelor of Science in Business Administration in IFSU Lagawe for their business proposal.'
+        desc: 'E-commerce website developed using MERN stack with different features including Rider and Seller web Application. This web Application also offers booking and other services like specifying the items the customer want the rider to buy in specific merchandise or store. I developed this for the students of Bachelor of Science in Business Administration in IFSU Lagawe for their business proposal.'
     },
     {
         id: 1, name: 'Enrollment',
