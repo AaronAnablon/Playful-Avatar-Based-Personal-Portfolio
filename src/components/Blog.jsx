@@ -12,7 +12,7 @@ function Blog({ title, setViewPort }, ref) {
   const { theme } = useTheme()
   return (
     <div ref={ref}>
-      <div className="h-max flex justify-cente mt-24">
+      <div className="h-max flex bg-gradient-to-r from-gray-600 to-gray-100justify-cente mt-24">
         <div className={`${theme} grid sm:grid-cols-1 md:grid-cols-2 z-30`}>
           <div className='p-4 flex md:ml-10 ml-0 items-center'>
             <div>
