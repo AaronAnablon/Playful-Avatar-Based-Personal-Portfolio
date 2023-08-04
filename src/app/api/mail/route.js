@@ -7,9 +7,9 @@ export async function POST(req) {
 
     try {
       transporter.sendMail({
-        from: data.email,
-        to: process.env.EMAIL,
-        subject: data.name + ' ' + data.email,
+        from: process.env.EMAIL,
+        to: data.email,
+        subject: data.subject,
         text: data.message,
       });
 

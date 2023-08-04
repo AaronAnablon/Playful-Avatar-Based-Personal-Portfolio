@@ -14,7 +14,7 @@ const AnimatedAaron = ({ scrolledText, isWalking, handleScroll, statusText }) =>
                         exit={{ scale: 0 }}
                         transition={{ type: 'spring' }}
                         className={`fixed top-44 md:top-60 lg:left-20 xl:left-56 md:left-8 left-3 flex items-center md:w-5/6 w-9/12`}>
-                        <div className="text-lg bg-blue-200 text-slate-500 rounded-lg p-10">
+                        <div className="text-lg bg-blue-200 text-slate-500 rounded-lg p-8">
                             Ohh! You scrolled. Scroll down and let us see what Aaron have.
                         </div>
                         <div className="w-0 h-0 
