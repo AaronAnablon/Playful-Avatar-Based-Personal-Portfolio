@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const AnimatedAaron = ({ scrolledText, isWalking, handleScroll, statusText }) => {
     return (
         <div>
-            <div className='fixed z-0 right-28 top-64 flex justify-center'>
+            <div className='fixed z-10 right-28 top-64 flex justify-center'>
                 {scrolledText &&
                     <motion.div
                         initial={{ scale: 0 }}
@@ -40,7 +40,7 @@ const AnimatedAaron = ({ scrolledText, isWalking, handleScroll, statusText }) =>
                         />
                     </div>
                 }
-                <div className='fixed md:w-48 w-32 z-0 xl:right-20 2xl:right-60 right-0 top-64'>
+                <div className='fixed md:w-48 w-32 z-10 xl:right-20 2xl:right-60 right-0 top-64'>
                     {isWalking ? (
                         <Image src={man} alt="Walking" onClick={handleScroll} priority={true} />
                     ) : (
