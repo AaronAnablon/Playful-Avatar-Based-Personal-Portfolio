@@ -24,7 +24,7 @@ const Header = ({ setViewPort }) => {
     };
 
     return (
-        <div className='px-10 z-50 h-16 grid grid-cols-2 sticky flex flex-row top-0 bg-slate-600 text-slate-50'>
+        <div className='px-10 z-50 h-16 grid grid-cols-2 sticky flex flex-row top-0 bg-slate-700 text-slate-50'>
             <div className={`grid md:grid-cols-12 grid-cols-4 justify-start items-center ${isMobileMenuOpen ? 'hidden' : ''}`}>
                 <Image onClick={() => handleScrollToSection("homeRef")} className='bg-white rounded-full' src={logo} alt='logo' />
             </div>
