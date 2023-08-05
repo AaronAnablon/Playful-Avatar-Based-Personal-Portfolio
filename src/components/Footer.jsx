@@ -19,7 +19,7 @@ const Footer = ({ setViewPort }) => {
       };
     return (
         <>
-            <div className={`bg-slate-700 z-10 py-10 grid md:grid-cols-4 text-white grid-cols-1 gap-4 items-center`}>
+            <div className={`bg-slate-800 w-full mt-10 z-10 py-10 grid md:grid-cols-4 text-white grid-cols-1 gap-4 items-center`}>
                 <div className={`flex justify-center items-center`}>
                     <Image width={60} onClick={() => handleScrollToSection("homeRef")} className='bg-white rounded-full' src={logo} alt='logo' />
                 </div>
