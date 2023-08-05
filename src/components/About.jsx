@@ -11,11 +11,11 @@ function About({ title }, ref) {
         <h2 className='text-4xl m-10 flex justify-start'>{title} ---</h2>
         <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 justify-center'>
           <div className='indent-6 w-full px-8'>
-            <p>{AboutText.p1}</p>
-            <p>{AboutText.p2}</p>
-            <p>{AboutText.p3}</p>
-            <p>{AboutText.p4}</p>
-            <p>{AboutText.p5}</p>
+            <div className='flex items-center'><div className='m-6 pr-6 py-4 text-2xl text-center bg-slate-800 rounded-md'>1</div><p>{AboutText.p1}</p></div>
+            <div className='flex items-center'><p>{AboutText.p2}</p><div className='m-6 pr-6 py-4 text-2xl text-center bg-slate-800 rounded-md'>2</div></div>
+            <div className='flex items-center'><div className='m-6 pr-6 py-4 text-2xl text-center bg-slate-800 rounded-md'>3</div><p>{AboutText.p3}</p></div>
+            <div className='flex items-center'><p>{AboutText.p4}</p><div className='m-6 pr-6 py-4 text-2xl text-center bg-slate-800 rounded-md'>4</div></div>
+            <div className='flex items-center'><div className='m-6 pr-6 py-4 text-2xl text-center bg-slate-800 rounded-md'>5</div><p>{AboutText.p5}</p></div>
           </div>
           <div className="grid w-full grid-cols-2">
             <motion.div
@@ -31,7 +31,7 @@ function About({ title }, ref) {
                 transition={{ delay: 2, transition: -3, type: 'spring' }}
                 className='text-red-700 absolute top-0 z-10'><ImPushpin size={38} /></motion.div>
               <Image src={AboutText.image3} alt="Image 3"
-                className="absolute right-0 top-0 rotate-12 h-48 w-96 object-cover border-4" />
+                className="absolute right-0 top-0 rotate-2 h-48 w-96 object-cover border-4" />
               <div className='text-blue-700 absolute -rotate-90 top-48 left-32 z-10'><ImPushpin size={38} /></div>
               <Image src={AboutText.image2} alt="Image 2"
                 className="absolute left-0 top-52 -rotate-6 h-48 w-96 object-cover border-4" />
@@ -65,7 +65,7 @@ function About({ title }, ref) {
                 className=" h-48 w-96 object-cover border-4" />
               <motion.div
                 initial={{ opacity: 0, scale: 0.5, }}
-                whileInView={{ opacity: 1, scale: 1, bottom: 180, right: 100,rotate: 270 }}
+                whileInView={{ opacity: 1, scale: 1, bottom: 180, right: 100, rotate: 270 }}
                 exit={{ opacity: 0, scale: 0.5 }}
                 transition={{ delay: 3, transition: 3, type: 'spring' }}
                 className='text-red-600 absolute z-10'>
