@@ -57,7 +57,7 @@ function Contact({ title, setStatusText }, ref) {
     window.open(mailtoLink, '_blank');
   };
   return (
-    <div className='z-0 bg-slate-500' ref={ref}>
+    <div className='z-0 bg-gradient-to-r from-slate-900 to-slate-500' ref={ref}>
       <motion.h2
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
