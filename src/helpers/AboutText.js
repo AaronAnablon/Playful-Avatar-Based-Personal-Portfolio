@@ -13,9 +13,9 @@ const AboutText =
       
       p3: "I chose to focus my efforts on mastering React Js, a powerful JavaScript library. Through dedicated learning, I delved into its concepts. The ability to create dynamic and interactive user interfaces fascinated me. Additionally, I ventured into backend development using Express js, where I gained learnings in building CRUD applications and leveraging APIs. I am easily taught and easily trained. I learn javascript, a programming language all by myself, starting with no prior knowledge about it.",
       
-      p4: "Armed with a diverse skill set and an unwavering passion for technology, I am eager to develop any web application that you can think of. I am ready to make a meaningful impact through my expertise in web development and IT solutions.",
-      
-      p5: "Feel free to reach out if you have any questions or opportunities for collaboration.",
+      p4: "I am eager to develop any web application that you can think of.",
+    
+      p5: "I am ready to make a meaningful impact through my expertise in web development and IT solutions. Feel free to reach out if you have any questions or opportunities for collaboration.",
     image1: focused,
     image2: meeting,
     image3: pres,
