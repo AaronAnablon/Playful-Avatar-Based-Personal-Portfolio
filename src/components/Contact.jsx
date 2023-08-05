@@ -57,18 +57,18 @@ function Contact({ title, setStatusText }, ref) {
     window.open(mailtoLink, '_blank');
   };
   return (
-    <div className='z-0 bg-slate-200 text-slate-900' ref={ref}>
+    <div className='z-0 bg-slate-500' ref={ref}>
       <motion.h2
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
         transition={{ delay: 1, type: 'spring' }}
-        className='text-4xl p-10 flex justify-start'>{title} ---
+        className='text-4xl text-slate-50 p-10 flex justify-start'>{title} ---
       </motion.h2>
      
-      <div className='relative h-screen'>
+      <div className='relative h-[38rem]'>
       <div className='flex flex-col absolute w-full top-44 justify-center'>
-          <div className='flex flex-col bg-slate-900 text-white py-10 px-2 md:p-10 gap-2 justify-start'>
+          <div className='flex flex-col bg-slate-800 text-white py-10 px-2 md:p-10 gap-2 justify-start'>
             <button className='flex items-center gap-3' onClick={handleSendEmail}>
               <BsEnvelopeAtFill size={28} />
               <div className='md:block hidden'> aaronanablon6@gmail.com</div>
@@ -86,9 +86,9 @@ function Contact({ title, setStatusText }, ref) {
           </div>
         </div>
         <div className="absolute top-4 w-10/12 h-screen md:w-max sm:right-10 right-0 lg:right-44">
-          <form onSubmit={handleSubmit} className='bg-slate-400 my-10 p-6'>
+          <form onSubmit={handleSubmit} className='bg-slate-900 rounded-lg text-white my-10 p-6'>
             <div className="w-full flex flex-col md:my-4">
-              <label className="font-bold text-gray-800" htmlFor="name">
+              <label className="font-bold" htmlFor="name">
                 Name
               </label>
               <input
@@ -96,13 +96,13 @@ function Contact({ title, setStatusText }, ref) {
                 minLength={3}
                 maxLength={150}
                 required
-                className=" p-4 border text-slate-700 border-gray-100 "
+                className=" p-4 border text-slate-700 rounded-lg border-gray-100 "
                 autoComplete="off"
                 id="name"
               />
             </div>
             <div className="w-full flex flex-col my-4">
-              <label className="font-bold text-gray-800" htmlFor="email">
+              <label className="font-bold " htmlFor="email">
                 Email
               </label>
               <input
@@ -110,13 +110,13 @@ function Contact({ title, setStatusText }, ref) {
                 minLength={5}
                 maxLength={150}
                 required
-                className=" p-4 border text-slate-700 border-gray-100 "
+                className=" p-4 border text-slate-700 rounded-lg border-gray-100 "
                 autoComplete="off"
                 id="email"
               />
             </div>
             <div>
-              <label className="font-bold text-gray-800" htmlFor="message">
+              <label className="font-bold" htmlFor="message">
                 Message
               </label>
               <textarea
@@ -125,7 +125,7 @@ function Contact({ title, setStatusText }, ref) {
                 minLength={10}
                 maxLength={500}
                 name="message"
-                className="w-full p-4 border text-slate-700 border-gray-100 "
+                className="w-full p-4 border rounded-lg text-slate-700 border-gray-100 "
               />
             </div>
             <motion.button
@@ -135,7 +135,7 @@ function Contact({ title, setStatusText }, ref) {
               transition={{ duration: 2, delay: 1 }}
               type="submit"
               disabled={loading}
-              className="px-4 py-2 w-40 bg-gray-700 disabled:bg-gray-400 disabled:text-gray-100 text-white font-medium mt-4">
+              className="px-4 py-2 w-40 bg-gray-700 rounded-lg disabled:bg-gray-400 disabled:text-gray-100 text-white font-medium mt-4">
               Send Message
             </motion.button>
           </form>
