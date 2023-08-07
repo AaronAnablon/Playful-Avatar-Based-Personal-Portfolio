@@ -1,7 +1,6 @@
 import { forwardRef } from 'react';
 import Image from 'next/image';
 import AboutText from '@/helpers/AboutText';
-import { ImPushpin } from "react-icons/im";
 import { motion } from 'framer-motion';
 import { useTheme } from '@/contexts/ThemeContext';
 
@@ -19,7 +18,7 @@ function About({ title }, ref) {
             <div className='flex items-center'><p className='mx-0 md:mx-10'>{AboutText.p4}</p><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>4</div></div>
             <div className='flex items-center'><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>5</div><p className='mx-0 md:mx-10'>{AboutText.p5}</p></div>
           </div>
-          <div className="grid lg:h-full h-[32rem] p-0 sm:px-16 lg:px-16 lg:py-32 w-full gap-10 grid-cols-2">
+          <div style={{backgroundImage: 'url("/bg.svg")'}} className="grid bg-content lg:h-full h-[32rem] p-0 sm:px-16 lg:px-16 lg:py-32 w-full gap-10 grid-cols-2">
             <motion.div
               initial={{ opacity: 0, y: -100 }}
               whileInView={{ opacity: 1, y: 0 }}
