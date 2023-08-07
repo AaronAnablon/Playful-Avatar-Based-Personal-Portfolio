@@ -5,6 +5,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 import { motion } from 'framer-motion';
 
+
 function Blog({ title, setViewPort }, ref) {
   const handleScrollToSection = (refer) => {
     setViewPort(refer)
@@ -12,11 +13,11 @@ function Blog({ title, setViewPort }, ref) {
   const { theme } = useTheme()
   return (
     <div ref={ref}>
-      <div className="h-max flex bg-gradient-to-r from-gray-600 to-gray-100justify-cente mt-24">
+      <div className="h-max flex justify-center mt-24">
         <div className={`${theme} grid sm:grid-cols-1 md:grid-cols-2 z-30`}>
           <div className='p-4 flex md:ml-10 ml-0 items-center'>
             <div>
-              <p>Hello! You found me.</p>
+              <p >Hello! You found me.</p>
               <motion.h1
                 initial={{ opacity: 0,x: -100 }}
                 whileInView={{ x: 0, opacity: 1 }}
