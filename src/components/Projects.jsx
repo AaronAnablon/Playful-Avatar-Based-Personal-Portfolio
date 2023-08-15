@@ -24,7 +24,7 @@ function Projects({ title }, ref) {
           {ProjectCards && ProjectCards.map((card) => (
             <div className={`grid md:grid-cols-2 grid-cols-1`} key={card.id}>
               <div className='flex flex-col h-full justify-center items-center mx-6'>
-                <p className='indent-6'>{card.desc}</p>
+                <p className='indent-6 z-20'>{card.desc}</p>
                 <Link href={card.url} target="_blank" rel="noopener noreferrer"><BiLinkExternal size={38} /></Link>
               </div>
               <motion.div
