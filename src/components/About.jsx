@@ -11,12 +11,12 @@ function About({ title }, ref) {
       <div className="min-h-screen flex flex-col align-center justify-center">
         <h2 className='text-4xl m-10 flex justify-start'>{title} ---</h2>
         <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-0 justify-center'>
-          <div className='indent-6 w-full px-8'>
-            <div className='flex items-center'><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>1</div><p className='mx-0 md:mx-10'>{AboutText.p1}</p></div>
-            <div className='flex items-center'><p className='mx-0 md:mx-10'>{AboutText.p2}</p><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>2</div></div>
-            <div className='flex items-center'><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>3</div><p className='mx-0 md:mx-10'>{AboutText.p3}</p></div>
-            <div className='flex items-center'><p className='mx-0 md:mx-10'>{AboutText.p4}</p><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>4</div></div>
-            <div className='flex items-center'><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>5</div><p className='mx-0 md:mx-10'>{AboutText.p5}</p></div>
+          <div className='indent-6 w-full px-8 z-10'>
+            <div className='flex items-center'><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>1</div><p className='mx-0 my-4 md:mx-10'>{AboutText.p1}</p></div>
+            <div className='flex items-center'><p className='mx-0 my-4 md:mx-10'>{AboutText.p2}</p><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>2</div></div>
+            <div className='flex items-center'><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>3</div><p className='mx-0 my-4 md:mx-10'>{AboutText.p3}</p></div>
+            <div className='flex items-center'><p className='mx-0 my-4 md:mx-10'>{AboutText.p4}</p><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>4</div></div>
+            <div className='flex items-center'><div className={`m-6 pr-6 py-4 text-2xl text-center ${isDarkMode ? 'text-white bg-slate-800' : 'text-slate-900 bg-slate-200'} rounded-md`}>5</div><p className='mx-0 my-4 md:mx-10'>{AboutText.p5}</p></div>
           </div>
           <div style={{backgroundImage: 'url("/bg.svg")'}} className="grid bg-content lg:h-[48rem] h-[32rem] p-0 sm:px-16 lg:px-16 lg:py-32 w-full gap-10 grid-cols-2">
             <motion.div
