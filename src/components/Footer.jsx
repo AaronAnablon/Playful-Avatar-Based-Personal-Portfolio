@@ -28,7 +28,7 @@ const Footer = ({ setViewPort }) => {
                 </div>
                 <div className='flex gap-4 justify-center items-center'>
                    <button onClick={handleSendEmail}><IoIosMail size={38} /></button> 
-                   <Link href='https://github.com/AaronAnablon' target='_blank'><AiFillGithub size={34} /></Link>  
+                   {/* <Link href='https://github.com/AaronAnablon' target='_blank'><AiFillGithub size={34} /></Link>   */}
                    <Link href='https://www.facebook.com/techibot' target='_blank'><BsFacebook size={28} /></Link>   
                    <Link href='https://www.linkedin.com/in/aaronpanablon' target='_blank'><BsLinkedin size={28} /></Link>   
                 </div>
