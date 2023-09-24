@@ -73,8 +73,8 @@ function Contact({ title, setStatusText }, ref) {
               <BsEnvelopeAtFill size={28} />
               <div className='md:block hidden'> aaronanablon6@gmail.com</div>
             </button>
-            <Link className='flex items-center gap-3' href='https://github.com/AaronAnablon' target='_blank'>
-              <BsGithub size={28} /> <div className='md:block hidden'> https://github.com/AaronAnablon</div></Link>
+            {/* <Link className='flex items-center gap-3' href='https://github.com/AaronAnablon' target='_blank'>
+              <BsGithub size={28} /> <div className='md:block hidden'> https://github.com/AaronAnablon</div></Link> */}
             <Link className='flex items-center gap-3' href='https://www.facebook.com/techibot' target='_blank'>
               <BsFacebook size={28} />
               <div className='md:block hidden'> https://www.facebook.com/techibot</div>
