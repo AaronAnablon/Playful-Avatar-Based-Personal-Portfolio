@@ -11,6 +11,9 @@ export const metadata = {
   title: 'Aaron Anablon',
   description: 'I am Anablon, Aaron P. I am a full stack web developer. I can develop any web applications that you have in mind. I can also develop mobile applications accroding to you need. Anablon. Anablon. Anablon',
   icons: [{ rel: 'icon', url: Favicon.src }],
+  verification: {
+    google: "hIjirSgOXU2TNGYRlajftvngJ3Os6fyauSrQhzNzWxc",
+  },
 }
 
 export default function RootLayout({ children }) {
