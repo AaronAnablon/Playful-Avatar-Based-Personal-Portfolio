@@ -9,6 +9,7 @@ import About from '@/components/About';
 import Message from '@/components/Message';
 import Footer from '@/components/Footer';
 import { FaArrowAltCircleUp } from "react-icons/fa";
+import Services from '@/components/Services';
 
 const AnimatedAaron = React.lazy(() => import('@/helpers/AnimatedAaron'))
 
@@ -21,6 +22,7 @@ export default function App() {
 
   const refs = {
     homeRef: useRef(null),
+    servicesRef: useRef(null),
     skillsRef: useRef(null),
     projectsRef: useRef(null),
     contactRef: useRef(null),
@@ -74,15 +76,16 @@ export default function App() {
 
   return (
     <div className={`${theme}`}>
-      <div className={` max-w-screen-xl relative flex flex-col justify-content-center mx-auto`}>
+      <Header setViewPort={setViewPort} />
+      <div className={` max-w-screen-2xl overflow-hidden relative flex flex-col justify-content-center mx-auto`}>
         <div className='fixed bg-slate-500 z-20 text-white rounded-full bottom-10 right-10' onClick={() => scrollToTop()}>
           <FaArrowAltCircleUp size={24} />
         </div>
-        <Header setViewPort={setViewPort} />
         <Suspense fallback={<div>Loading...</div>}>
-          <AnimatedAaron statusText={statusText} scrolledText={scrolledText} isWalking={isWalking} handleScroll={handleScroll} />
           <Blog ref={refs.homeRef} setViewPort={setViewPort} title="Blog" />
+          <AnimatedAaron statusText={statusText} scrolledText={scrolledText} isWalking={isWalking} handleScroll={handleScroll} />
           <Message setScrolledText={setScrolledText} />
+          <Services ref={refs.servicesRef} title="Services" />
           <Skills ref={refs.skillsRef} title="Skills" />
           <Projects ref={refs.projectsRef} title="Projects" />
           <Contact setStatusText={setStatusText} ref={refs.contactRef} title="Contact" />

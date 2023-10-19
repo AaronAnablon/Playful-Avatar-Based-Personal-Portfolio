@@ -8,7 +8,7 @@ export const useTheme = () => useContext(ThemeContext);
 export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const theme = isDarkMode ? 'bg-slate-900 text-slate-50' : 'bg-slate-50 text-slate-950'
+  const theme = isDarkMode ? 'bg-[#1b1a25] text-slate-50' : 'bg-slate-50 text-slate-950'
    
   return (
     <ThemeContext.Provider value={{ isDarkMode, setIsDarkMode, theme }}>

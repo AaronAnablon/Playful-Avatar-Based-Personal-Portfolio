@@ -13,7 +13,7 @@ function Blog({ title, setViewPort }, ref) {
   const { theme } = useTheme()
   return (
     <div ref={ref}>
-      <div className="h-max flex justify-center mt-24">
+      <div className="h-max flex justify-center mt-32">
         <div className={`${theme} grid sm:grid-cols-1 md:grid-cols-2 z-30`}>
           <div className='p-4 flex md:ml-10 ml-0 items-center'>
             <div>
@@ -26,7 +26,7 @@ function Blog({ title, setViewPort }, ref) {
                 className='lg:text-8xl text-6xl'>I AM AARON ANABLON</motion.h1>
               <p>Full Stack Web Developer</p>
               <button
-                className='rounded-full flex items-center text-xl text-slate-700 m-10 p-4 bg-slate-300 animate-bounce'
+                className='rounded-full flex items-center text-xl text-white m-10 px-6 py-4 bg-red-700 animate-bounce'
                 onClick={() => handleScrollToSection("contactRef")}>
                 Contact me
                 <IoIosArrowRoundForward size={34} />
@@ -38,8 +38,8 @@ function Blog({ title, setViewPort }, ref) {
             whileInView={{ scale: 1 }}
             exit={{ scale: 0 }}
             transition={{ type: 'spring' }}
-            className='rounded-full bg-red-700 overflow-hidden flex z-40 px-10 justify-center'>
-            <Image src={profile} alt='profile' />
+            className='rounded-full bg-gradient-to-b from-red-700  to-opacity-50 to-80% overflow-hidden flex z-40 px-16 justify-center'>
+            <Image src={profile} width={500} height={500} alt='profile' />
           </motion.div>
         </div>
       </div>
