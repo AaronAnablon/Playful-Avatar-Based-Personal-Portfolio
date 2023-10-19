@@ -3,7 +3,7 @@ import TextMessage from '@/helpers/TextMessage';
 const Message = ({ setScrolledText }) => {
 
     return (
-        <div className="h-screen w-full text-9xl flex items-center justify-center">
+        <div className="h-screen w-full flex items-center justify-center">
         <TextMessage setScrolledText={setScrolledText}/>
         </div>
     );

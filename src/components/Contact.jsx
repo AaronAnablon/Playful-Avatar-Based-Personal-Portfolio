@@ -68,7 +68,7 @@ function Contact({ title, setStatusText }, ref) {
      
       <div className='relative h-[38rem]'>
       <div className='flex flex-col absolute w-full top-44 justify-center'>
-          <div className='flex flex-col bg-slate-800 text-white py-10 px-2 md:p-10 gap-2 justify-start'>
+          <div className='flex flex-col bg-slate-800 shadow-lg shadow-red-500/50 text-white py-10 px-2 md:p-10 gap-2 justify-start'>
             <button className='flex items-center gap-3' onClick={handleSendEmail}>
               <BsEnvelopeAtFill size={28} />
               <div className='md:block hidden'> aaronanablon6@gmail.com</div>
@@ -132,7 +132,7 @@ function Contact({ title, setStatusText }, ref) {
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               exit={{ scale: 0 }}
-              transition={{ duration: 2, delay: 1 }}
+              transition={{ delay: 1 }}
               type="submit"
               disabled={loading}
               className="px-4 py-2 w-40 bg-gray-700 rounded-lg disabled:bg-gray-400 disabled:text-gray-100 text-white font-medium mt-4">

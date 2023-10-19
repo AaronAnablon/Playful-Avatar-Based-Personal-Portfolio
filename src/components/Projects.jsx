@@ -9,15 +9,15 @@ import Link from 'next/link';
 import { motion } from "framer-motion";
 
 function Projects({ title }, ref) {
-
+  const url = process.env.NEXT_PUBLIC_URL
   return (
-    <div className='overflow-hidden' ref={ref}>
+    <div className='overflow-hidden grid justify-center' ref={ref}>
       <motion.h2
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
-        transition={{ duration: 2, delay: 1 }}>
-        <h2 className='text-4xl ml-10 flex justify-start'>{title} ---</h2>
+        transition={{ delay: 0.5 }}>
+        <h2 className='text-4xl m-10 flex justify-start'>{title} ---</h2>
       </motion.h2>
       <div className="h-max w-full mb-40 lg:mb-0 flex items-center justify-center">
         <div className='grid mb-24 grid-cols-1 gap-48'>
@@ -31,7 +31,7 @@ function Projects({ title }, ref) {
                 initial={{ opacity: 0, x: 100 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100 }}
-                transition={{ duration: 2, delay: 1 }}>
+                transition={{ delay: 0.5 }}>
                 <div className='flex px-10'>
                   <div className='relative w-4/12'>
                     {card.tablet && <>
@@ -55,6 +55,9 @@ function Projects({ title }, ref) {
             </div>
           ))}
         </div>
+      </div>
+      <div className='flex justify-center m-10 w-full'>
+        <Link href={url} className='px-6 py-2 rounded-full bg-red-700 text-white'>More Projects</Link>
       </div>
     </div>
   );
