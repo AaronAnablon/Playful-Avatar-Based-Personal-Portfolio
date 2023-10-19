@@ -20,7 +20,7 @@ const Footer = ({ setViewPort }) => {
     return (
         <>
             <div className={`bg-slate-800 relative w-full h-max z-10 py-10 grid md:grid-cols-4 text-white grid-cols-1 gap-4 items-center`}>
-            <Image className='absolute bottom-0' height={300} width={800} src={"/svg/Looper_bg.svg"} alt='bg' />
+            <Image className='absolute bottom-0 -z-10' height={300} width={800} src={"/svg/Looper_bg.svg"} alt='bg' />
                 <div className={`flex justify-center items-center`}>
                     <Image width={60} onClick={() => handleScrollToSection("homeRef")} className='bg-white rounded-full' src={logo} alt='logo' />
                 </div>
