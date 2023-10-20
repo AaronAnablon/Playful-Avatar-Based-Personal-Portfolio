@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "proxy": "https://aaron-anablon.vercel.app/"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.3",
@@ -20,10 +21,13 @@
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-facebook": "^9.0.12",
     "react-icons": "^4.10.1",
-    "react-messenger-plugin": "^2.1.0",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "babel-loader": "^9.1.3"
   }
 }
