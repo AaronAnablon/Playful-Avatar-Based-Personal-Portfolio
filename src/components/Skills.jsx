@@ -37,7 +37,7 @@ function Skills({ title }, ref) {
   }, []);
   return (
     <div ref={ref}>
-      <div className="h-screen">
+      <div className="h-max">
         <div className="relative">
           <motion.div ref={scope}>
             <h2 className='text-4xl ml-10 flex justify-star'>{title} ---</h2>

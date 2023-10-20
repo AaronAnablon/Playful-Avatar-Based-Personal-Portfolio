@@ -1,12 +1,9 @@
-import React from 'react';
-import { FacebookProvider, CustomChat } from 'react-facebook';
+import MessengerPlugin from 'react-messenger-plugin';
 
-const Facebook = () => {
+export default function MessengerButton() {
     return (
-        <FacebookProvider appId="236538592441021" chatSupport>
-            <CustomChat pageId="103462801849471" minimized={true} />
-        </FacebookProvider>
+        <MessengerPlugin
+            appId="236538592441021"
+            pageId="103462801849471" />
     );
 }
-
-export default Facebook;

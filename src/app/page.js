@@ -94,11 +94,14 @@ export default function Home() {
             <Projects ref={refs.projectsRef} title="Projects" />
             <Contact setStatusText={setStatusText} ref={refs.contactRef} title="Contact" />
             <About ref={refs.aboutRef} title="About" />
-            <MessengerButton />
             <Footer setViewPort={setViewPort} />
+            <div className='absolute bottom-16 right-10'>
+                 <MessengerButton />         
+            </div>
           </Suspense>
         </div>
       </div>
+     
     </main>
   )
 }
