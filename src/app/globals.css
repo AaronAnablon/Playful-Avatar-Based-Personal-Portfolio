@@ -118,8 +118,6 @@
 
   .div1 {
     grid-area: 1 / 1 / 13 / 13;
-    background: rgb(17,19,50);
-    background: linear-gradient(228deg, rgba(17,19,50,1) 46%, rgba(200,10,3,1) 46%);
   }
 
   .div2 {

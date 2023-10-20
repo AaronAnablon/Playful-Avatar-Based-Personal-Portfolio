@@ -11,6 +11,7 @@ import About from '@/components/About';
 import Message from '@/components/Message';
 import Footer from '@/components/Footer';
 import { FaArrowAltCircleUp } from "react-icons/fa";
+import MessengerButton from "@/components/MessengerButton"
 import Services from '@/components/Services';
 
 const AnimatedAaron = React.lazy(() => import('@/helpers/AnimatedAaron'))
@@ -93,6 +94,7 @@ export default function Home() {
             <Projects ref={refs.projectsRef} title="Projects" />
             <Contact setStatusText={setStatusText} ref={refs.contactRef} title="Contact" />
             <About ref={refs.aboutRef} title="About" />
+            <MessengerButton />
             <Footer setViewPort={setViewPort} />
           </Suspense>
         </div>
