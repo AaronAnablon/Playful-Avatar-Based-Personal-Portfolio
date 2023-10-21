@@ -25,7 +25,7 @@ function Projects({ title }, ref) {
             <div className={`grid md:grid-cols-2 grid-cols-1`} key={card.id}>
               <div className='flex flex-col h-full justify-center items-center mx-6'>
                 <p className='indent-6 z-20'>{card.desc}</p>
-                <Link href={card.url} target="_blank" rel="noopener noreferrer"><BiLinkExternal size={38} /></Link>
+                <Link href={card.url} target="_blank" rel="noopener noreferrer"><BiLinkExternal className='text-red-600' size={38} /></Link>
               </div>
               <motion.div
                 initial={{ opacity: 0, x: 100 }}

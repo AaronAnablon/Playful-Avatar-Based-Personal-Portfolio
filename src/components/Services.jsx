@@ -10,9 +10,9 @@ function Services({ title }, ref) {
     return (
         <div className='overflow-hidden mx-auto' ref={ref}>
             <motion.h2
-                initial={{ opacity: 0, x: -100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
+                initial={{ opacity: 0, y: -100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -100 }}
                 transition={{ duration: 1, delay: 1 }}>
                 <h2 className='text-4xl m-10 flex justify-start'>{title} ---</h2>
             </motion.h2>
