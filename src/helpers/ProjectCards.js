@@ -22,7 +22,7 @@ const ProjectCards = [
         desktop: enrollment,
         phone: '',
         tablet: '',
-        desc: 'Enrollment system developed using C# with different features including SMS integration and and support to printing hard copies of grades and other school credentials. This is my capstone project. The Application only supports Desktop.'
+        desc: 'Enrollment system developed using C# with different features including SMS integration, support to printing hard copies of grades and other school credentials. This is my capstone project. The Application only supports Desktop.'
     },
     // {
     //     id: 2, name: 'Matrix',
