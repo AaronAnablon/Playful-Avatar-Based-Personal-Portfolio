@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import { useTheme } from '../contexts/ThemeContext';
 import NavCards from '@/helpers/NavCards';
 import { motion, useAnimate, useInView } from "framer-motion";
+import Carousel from '@/helpers/Carousel';
 
 function Skills({ title }, ref) {
   const { isDarkMode } = useTheme();
@@ -18,48 +19,63 @@ function Skills({ title }, ref) {
   };
 
   useEffect(() => {
-  
+
     if (isInView) {
       animate(scope.current, { opacity: 100 })
     } else {
-      animate(scope.current, { opacity: 0})
+      animate(scope.current, { opacity: 0 })
     }
   }, [isInView])
 
-  const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const slider1 = useRef(null);
   const slider2 = useRef(null);
 
   useEffect(() => {
-    setNav1(slider1.current);
     setNav2(slider2.current);
   }, []);
+
+  const images = [
+    '/testimonials/mes2.png',
+    '/testimonials/mes3.png',
+    '/testimonials/mes1.png',
+  ];
+
+
   return (
     <div ref={ref}>
       <div className="h-max">
         <div className="relative">
           <motion.div ref={scope}>
-            <h2 className='text-4xl ml-10 flex justify-star'>{title} ---</h2>
+            <h2 className='text-4xl ml-10 flex justify-start'>{title} ---</h2>
           </motion.div>
           <div className='flex items-center z-10 justify-center'>
             <div
-              className={`${isDarkMode ? 'bg-slate-600' : 'bg-slate-300'} md:w-96 w-64 rounded-md transition-transform delay-700 duration-1000'}
+              className={`flex justify-center flex-wrap gap-4'}
             `}>
-              <Slider asNavFor={nav2} ref={slider1} {...navSettings}>
-                {cards.map((card) =>
-                  <div key={card.id} className='flex items-center justify-center'>
-                    <div className='w-11/12 h-1/2 flex p-4 justify-center items-center'>{card.card}</div>
-                    <div className='flex text-xs cursor-pointer md:text-xl mt-6 items-center justify-center'>{card.desc}</div>
-                  </div>
-                )}
-              </Slider>
+              {cards.map((card) =>
+                <div key={card.id}
+                  className={`${isDarkMode ? 'bg-slate-600' : 'bg-slate-300'} m-2 rounded-lg grid items-center justify-center`}>
+                  <div className='w-32 h-32 flex p-4 justify-center items-center'>{card.card}</div>
+                  <div className='flex text-xs cursor-pointer md:text-xl items-center justify-center'>{card.desc}</div>
+                </div>
+              )}
             </div>
           </div>
+          <h2 className='text-4xl ml-10 mt-20 flex justify-start'>TESTTIMONIALS ---</h2>
+          <div className='flex justify-center'>
+            <div
+              className={` w-3/4 h-96 m-14 rounded-md transition-transform delay-700 duration-1000'}
+            `}>
+              <div className='px-20 mx-32'>
+                <Carousel images={images} />
+              </div>
+            </div>
+          </div>
+
         </div>
-        <NavCards nav1={nav1} cards={cards} slider2={slider2} isDarkMode={isDarkMode} />
       </div>
-    </div>
+    </div >
   );
 }
 
