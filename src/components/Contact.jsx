@@ -17,7 +17,7 @@ function Contact({ title, setStatusText }, ref) {
       subject: 'This is from ' + event.target.email.value,
       message: event.target.message.value,
     };
-    const send =  {
+    const send = {
       name: event.target.name.value,
       email: event.target.email.value,
       subject: `Greetings ${event.target.name.value}!`,
@@ -65,16 +65,14 @@ function Contact({ title, setStatusText }, ref) {
         transition={{ delay: 1, type: 'spring' }}
         className='text-4xl text-slate-50 p-10 flex justify-start'>{title} ---
       </motion.h2>
-     
+
       <div className='relative h-[38rem]'>
-      <div className='flex flex-col absolute w-full top-44 justify-center'>
+        <div className='flex flex-col absolute w-full top-44 justify-center'>
           <div className='flex flex-col bg-slate-800 shadow-lg shadow-red-500/50 text-white py-10 px-2 md:p-10 gap-2 justify-start'>
             <button className='flex items-center gap-3' onClick={handleSendEmail}>
               <BsEnvelopeAtFill size={28} />
               <div className='md:block hidden'> aaronanablon6@gmail.com</div>
             </button>
-            {/* <Link className='flex items-center gap-3' href='https://github.com/AaronAnablon' target='_blank'>
-              <BsGithub size={28} /> <div className='md:block hidden'> https://github.com/AaronAnablon</div></Link> */}
             <Link className='flex items-center gap-3' href='https://www.facebook.com/techibot' target='_blank'>
               <BsFacebook size={28} />
               <div className='md:block hidden'> https://www.facebook.com/techibot</div>
