@@ -18,7 +18,7 @@ const AnimatedAaron = ({ scrolledText, isWalking, handleScroll, statusText }) =>
                             <div className="text-lg grid gap-1 bg-blue-200 text-slate-500 rounded-lg 2xl:p-24 lg:p-12 p-20">
                                 <p>Ohh! You scrolled. Scroll down and let us see what Aaron have.</p>
                                 <p>Feel free to explore my recently<p>
-                                </p></p> launched portfolio website as well. <a href='https://portfolio1-tau-six.vercel.app/'>
+                                </p></p> launched portfolio website as well. <a href='https://aaron-anablon.vercel.app'>
                                     <ins>Click here.</ins></a>
                             </div>
                             <div className="w-0 h-0 
