@@ -39,6 +39,7 @@ function Skills({ title }, ref) {
     '/testimonials/mes2.png',
     '/testimonials/mes3.png',
     '/testimonials/mes1.png',
+    '/testimonials/mes4.png',
   ];
 
 
