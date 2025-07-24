@@ -1,7 +1,12 @@
 import Image from "next/image";
+import { ReactElement } from "react";
 
+interface NavCard {
+  id: number;
+  card: ReactElement;
+}
 
-const cards = [
+const cards: NavCard[] = [
   {
     id: 1, card: <Image src={"/testimonials/mes1.png"} className="object-cover rounded-lg" sizes='100vw' width={800}
       height={800} alt="messsage" />
@@ -20,4 +25,5 @@ const cards = [
   },
 
 ]
+
 export default cards;

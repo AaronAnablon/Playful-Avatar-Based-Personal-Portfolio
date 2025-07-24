@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import {
   SiHtml5,
   SiCss3,
@@ -15,8 +16,13 @@ import {
 import { TbBrandReactNative } from "react-icons/tb";
 import { FaRust } from "react-icons/fa";
 
+interface SkillCard {
+  id: number;
+  card: ReactElement;
+  desc: string;
+}
 
-const cards = [
+const cards: SkillCard[] = [
   { id: 1, card: <SiCss3 className="w-full h-full" />, desc: 'CSS' },
   { id: 2, card: <SiJavascript className="w-full h-full" />, desc: 'JAVASCRIPT' },
   { id: 3, card: <SiReact className="w-full h-full" />, desc: 'REACT' },
@@ -26,10 +32,11 @@ const cards = [
   { id: 7, card: <SiMongodb className="w-full h-full" />, desc: 'MONGODB' },
   { id: 8, card: <SiMysql className="w-full h-full" />, desc: 'MYSQL' },
   { id: 9, card: <SiCsharp className="w-full h-full" />, desc: 'C#' },
-  { id: 11, card: <SiHtml5 className="w-full h-full" />, desc: 'HTML' },
+  { id: 10, card: <SiHtml5 className="w-full h-full" />, desc: 'HTML' },
   { id: 11, card: <SiTauri className="w-full h-full" />, desc: 'TAURI' },
-  { id: 11, card: <TbBrandReactNative className="w-full h-full" />, desc: 'REACT NATIVE' },
-  { id: 11, card: <FaRust className="w-full h-full" />, desc: 'RUST' },
-  { id: 11, card: <SiVisualstudio className="w-full h-full" />, desc: 'VISUAL BASIC' },
+  { id: 12, card: <TbBrandReactNative className="w-full h-full" />, desc: 'REACT NATIVE' },
+  { id: 13, card: <FaRust className="w-full h-full" />, desc: 'RUST' },
+  { id: 14, card: <SiVisualstudio className="w-full h-full" />, desc: 'VISUAL BASIC' },
 ]
+
 export default cards;

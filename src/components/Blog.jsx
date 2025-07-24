@@ -26,7 +26,7 @@ function Blog({ title, setViewPort }, ref) {
                 className='lg:text-8xl text-6xl'>I AM AARON ANABLON</motion.h1>
               <p>Full Stack Web Developer</p>
               <button
-                className='rounded-full flex items-center text-xl text-white m-10 px-6 py-4 bg-red-700 animate-bounce'
+                className='rounded-full flex items-center text-xl text-white m-10 px-6 py-4 bg-rose-red-600 hover:bg-rose-red-700 animate-bounce transition-colors duration-200 shadow-lg hover:shadow-xl'
                 onClick={() => handleScrollToSection("contactRef")}>
                 Contact me
                 <IoIosArrowRoundForward size={34} />

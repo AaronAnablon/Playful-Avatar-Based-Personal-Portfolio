@@ -41,9 +41,9 @@ const Header = ({ setViewPort }) => {
     return (
         <div className={`w-full text-xl text-white flex justify-center mx-auto px-10 py-4 z-40 lg:h-max top-0 fixed
                 ${prevScrollPos > 300 ?
-                (isMobileMenuOpen ? 'h-screen w-3/4 bg-gray-700 z-50 fixed' : 'w-full bg-gray-700 opacity-80 ')
+                (isMobileMenuOpen ? 'h-screen w-3/4 bg-gradient-to-b from-rose-red-600 to-gray-700 z-50 fixed' : 'w-full bg-gradient-to-r from-rose-red-600 to-gray-700 opacity-90 shadow-lg backdrop-blur-sm')
                 :
-                (isMobileMenuOpen ? 'h-screen bg-gray-700 z-50 w-3/4' : "w-full bg-gradient-to-r from-red-700  to-gray-800 to-60%")
+                (isMobileMenuOpen ? 'h-screen bg-gradient-to-b from-rose-red-600 to-gray-700 z-50 w-3/4' : "w-full bg-gradient-to-r from-rose-red-600 to-gray-800 to-60%")
             } ${isScrolled ? "hidden" : "visible"} `} >
 
             <div className='h-16 flex w-full justify-between'>
@@ -56,12 +56,12 @@ const Header = ({ setViewPort }) => {
                     <div className="md:hidden cursor-pointer" onClick={toggleMobileMenu}>
                         {isMobileMenuOpen ? <GiTireIronCross size={28} className='absolute top-6 right-0' /> : <GiHamburgerMenu size={28} />}
                     </div>
-                    <div className={`p-1 cursor-pointer hover:bg-gray-400 rounded-lg ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("homeRef")}>Home</div>
-                    <div className={`p-1 cursor-pointer hover:bg-gray-400 rounded-lg ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("servicesRef")}>Services</div>
-                    <div className={`p-1 cursor-pointer hover:bg-gray-400 rounded-lg ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("skillsRef")}>Skills</div>
-                    <div className={`p-1 cursor-pointer hover:bg-gray-400 rounded-lg ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("projectsRef")}>Projects</div>
-                    <div className={`p-1 cursor-pointer hover:bg-gray-400 rounded-lg ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("contactRef")}>Contact</div>
-                    <div className={`p-1 cursor-pointer hover:bg-gray-400 rounded-lg ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("aboutRef")}>About</div>
+                    <div className={`p-1 cursor-pointer hover:bg-rose-red-500 hover:bg-opacity-50 rounded-lg transition-colors duration-200 ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("homeRef")}>Home</div>
+                    <div className={`p-1 cursor-pointer hover:bg-rose-red-500 hover:bg-opacity-50 rounded-lg transition-colors duration-200 ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("servicesRef")}>Services</div>
+                    <div className={`p-1 cursor-pointer hover:bg-rose-red-500 hover:bg-opacity-50 rounded-lg transition-colors duration-200 ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("skillsRef")}>Skills</div>
+                    <div className={`p-1 cursor-pointer hover:bg-rose-red-500 hover:bg-opacity-50 rounded-lg transition-colors duration-200 ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("projectsRef")}>Projects</div>
+                    <div className={`p-1 cursor-pointer hover:bg-rose-red-500 hover:bg-opacity-50 rounded-lg transition-colors duration-200 ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("contactRef")}>Contact</div>
+                    <div className={`p-1 cursor-pointer hover:bg-rose-red-500 hover:bg-opacity-50 rounded-lg transition-colors duration-200 ${isMobileMenuOpen ? 'flex w-full justify-start' : 'hidden md:block'}`} onClick={() => handleScrollToSection("aboutRef")}>About</div>
                     <button
                         onClick={() => handleThemeToggle()}
                         className={` p-1 ml-2 cursor-pointer w-12 rounded-lg items-center 
