@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image';
 import enrollment from '../../public/Enrollment System.png'
 import ecommerce from '../../public/Ecommerce.png'
 import matrix from '../../public/Matrix.png'
@@ -7,7 +8,17 @@ import DesktopAiChatbot from '../../public/DesktopAIChatbot.png'
 import phoneAiChatbot from '../../public/phoneAiChatbot.png'
 import tabletAiChatbot from '../../public/tabletAiChatbot.png'
 
-const ProjectCards = [
+interface ProjectCard {
+    id: number;
+    name: string;
+    url: string;
+    desktop: StaticImageData;
+    phone: StaticImageData | string;
+    tablet: StaticImageData | string;
+    desc: string;
+}
+
+const ProjectCards: ProjectCard[] = [
     {
         id: 0, name: 'Ecommerce',
         url: 'https://moon-delivery.vercel.app',

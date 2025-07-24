@@ -1,11 +1,15 @@
 import { useEffect } from "react";
 import { useAnimate, useInView } from "framer-motion";
 
-const TextMessage = ({ setScrolledText }) => {
+interface TextMessageProps {
+    setScrolledText: (value: boolean) => void;
+}
+
+const TextMessage: React.FC<TextMessageProps> = ({ setScrolledText }) => {
     const [scope, animate] = useAnimate();
-    const isInView = useInView(scope, { threshold: 0.5 });
+    const isInView = useInView(scope, { amount: 0.5 });
+    
     useEffect(() => {
-      
         if (isInView) {
             animate(scope.current, { opacity: 1 });
             setScrolledText(true)
@@ -13,7 +17,7 @@ const TextMessage = ({ setScrolledText }) => {
             animate(scope.current, { opacity: 0 });
             setScrolledText(false)
         }
-    }, [isInView]);
+    }, [isInView, animate, scope, setScrolledText]);
 
     return (
         <div ref={scope} className="flex items-center">

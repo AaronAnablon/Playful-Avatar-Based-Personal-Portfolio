@@ -1,16 +1,20 @@
-// Carousel.js
+// Carousel.tsx
 
 import React, { useState } from 'react';
 import { GrNext, GrPrevious } from "react-icons/gr";
 
-const Carousel = ({ images }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+interface CarouselProps {
+    images: string[];
+}
 
-    const nextSlide = () => {
+const Carousel: React.FC<CarouselProps> = ({ images }) => {
+    const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+    const nextSlide = (): void => {
         setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
     };
 
-    const prevSlide = () => {
+    const prevSlide = (): void => {
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
     };
 

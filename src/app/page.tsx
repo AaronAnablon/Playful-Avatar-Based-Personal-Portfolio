@@ -15,37 +15,53 @@ import Services from '@/components/Services';
 
 const AnimatedAaron = React.lazy(() => import('@/helpers/AnimatedAaron'))
 
-export default function Home() {
-  const { theme } = useTheme();
-  const [viewPort, setViewPort] = useState(null);
-  const [scrolledText, setScrolledText] = useState()
-  const [statusText, setStatusText] = useState(false)
-  const [isWalking, setIsWalking] = useState(false);
+interface Refs {
+  homeRef: React.RefObject<HTMLDivElement | null>;
+  servicesRef: React.RefObject<HTMLDivElement | null>;
+  skillsRef: React.RefObject<HTMLDivElement | null>;
+  projectsRef: React.RefObject<HTMLDivElement | null>;
+  contactRef: React.RefObject<HTMLDivElement | null>;
+  aboutRef: React.RefObject<HTMLDivElement | null>;
+}
 
-  const refs = {
-    homeRef: useRef(null),
-    servicesRef: useRef(null),
-    skillsRef: useRef(null),
-    projectsRef: useRef(null),
-    contactRef: useRef(null),
-    aboutRef: useRef(null)
+export default function Home(): React.JSX.Element {
+  const { theme } = useTheme() as { theme: string };
+  const [viewPort, setViewPort] = useState<string | null>(null);
+  const [scrolledText, setScrolledText] = useState<string | undefined>(undefined);
+  const [statusText, setStatusText] = useState<boolean>(false);
+  const [isWalking, setIsWalking] = useState<boolean>(false);
+
+  const refs: Refs = {
+    homeRef: useRef<HTMLDivElement>(null),
+    servicesRef: useRef<HTMLDivElement>(null),
+    skillsRef: useRef<HTMLDivElement>(null),
+    projectsRef: useRef<HTMLDivElement>(null),
+    contactRef: useRef<HTMLDivElement>(null),
+    aboutRef: useRef<HTMLDivElement>(null)
   };
-  const scrollTimerRef = useRef(null);
+  const scrollTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    refs[viewPort]?.current?.scrollIntoView({ behavior: 'smooth' });
+    if (viewPort && refs[viewPort as keyof Refs]) {
+      refs[viewPort as keyof Refs]?.current?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, [viewPort, refs]);
 
-  const handleScroll = () => {
+  const handleScroll = (): void => {
     setIsWalking(true);
     setViewPort(null);
 
-    clearTimeout(scrollTimerRef.current);
+    if (scrollTimerRef.current) {
+      clearTimeout(scrollTimerRef.current);
+    }
     scrollTimerRef.current = setTimeout(() => {
       setIsWalking(false);
       const scrolledElement = Object.entries(refs).find(([key, ref]) => {
-        const rect = ref.current.getBoundingClientRect();
-        return rect.top >= 0 && rect.bottom <= window.innerHeight;
+        if (ref.current) {
+          const rect = ref.current.getBoundingClientRect();
+          return rect.top >= 0 && rect.bottom <= window.innerHeight;
+        }
+        return false;
       });
       if (scrolledElement) {
         setViewPort(scrolledElement[0]);
@@ -65,7 +81,7 @@ export default function Home() {
     }
   }, [statusText]);
 
-  const scrollToTop = () => {
+  const scrollToTop = (): void => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

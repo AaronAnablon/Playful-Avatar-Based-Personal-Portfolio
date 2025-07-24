@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { motion } from "framer-motion";
 
 function Projects({ title }, ref) {
-  const url = process.env.NEXT_PUBLIC_URL
+  const url = process.env.NEXT_PUBLIC_URL || '/projects'
   return (
     <div className='overflow-hidden grid justify-center' ref={ref}>
       <motion.h2
@@ -25,7 +25,11 @@ function Projects({ title }, ref) {
             <div className={`grid md:grid-cols-2 grid-cols-1`} key={card.id}>
               <div className='flex flex-col h-full justify-center items-center mx-6'>
                 <p className='indent-6 z-20'>{card.desc}</p>
-                <Link href={card.url} target="_blank" rel="noopener noreferrer"><BiLinkExternal className='text-red-600' size={38} /></Link>
+                {card.url && (
+                  <Link href={card.url} target="_blank" rel="noopener noreferrer">
+                    <BiLinkExternal className='text-rose-red-600 hover:text-rose-red-700 transition-colors duration-200' size={38} />
+                  </Link>
+                )}
               </div>
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
@@ -57,7 +61,7 @@ function Projects({ title }, ref) {
         </div>
       </div>
       <div className='flex justify-center m-10 w-full'>
-        <Link href={url} className='px-6 py-2 rounded-full bg-red-700 text-white'>More Projects</Link>
+        <Link href={url} className='px-6 py-2 rounded-full bg-rose-red-600 hover:bg-rose-red-700 text-white transition-colors duration-200 shadow-lg hover:shadow-xl'>More Projects</Link>
       </div>
     </div>
   );

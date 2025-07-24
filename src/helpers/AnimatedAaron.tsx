@@ -2,8 +2,16 @@ import Image from 'next/image';
 import man from '../../public/man.gif';
 import standing from '../../public/standing.gif';
 import { motion } from 'framer-motion';
+import React from 'react';
 
-const AnimatedAaron = ({ scrolledText, isWalking, handleScroll, statusText }) => {
+interface AnimatedAaronProps {
+    scrolledText: string | undefined;
+    isWalking: boolean;
+    handleScroll: () => void;
+    statusText: boolean;
+}
+
+const AnimatedAaron: React.FC<AnimatedAaronProps> = ({ scrolledText, isWalking, handleScroll, statusText }) => {
     return (
         <div>
             <div className='fixed z-10 right-28 top-64 flex justify-center'>
@@ -14,7 +22,8 @@ const AnimatedAaron = ({ scrolledText, isWalking, handleScroll, statusText }) =>
                             whileInView={{ scale: 1 }}
                             exit={{ scale: 0 }}
                             transition={{ type: 'spring' }}
-                            className={`fixed top-44 md:top-60 lg:left-20 xl:left-56 md:left-8 left-3 flex items-center md:w-5/6 w-9/12`}>
+                            className="fixed top-44 md:top-60 lg:left-20 xl:left-56 md:left-8 left-3 flex items-center md:w-5/6 w-9/12"
+                            {...({} as any)}>
                             <div className="text-lg grid gap-1 bg-blue-200 text-slate-500 rounded-lg 2xl:p-24 lg:p-12 p-20">
                                 <p>Ohh! You scrolled. Scroll down and let us see what Aaron have.</p>
                                 <p>Feel free to explore my recently<p>
@@ -42,7 +51,7 @@ const AnimatedAaron = ({ scrolledText, isWalking, handleScroll, statusText }) =>
                 }
                 {statusText &&
                     <>
-                        <div className={`fixed top-44 md:top-60 lg:left-20 xl:left-56 md:left-8 left-3 flex items-center md:w-5/6 w-9/12`}>
+                        <div className="fixed top-44 md:top-60 lg:left-20 xl:left-56 md:left-8 left-3 flex items-center md:w-5/6 w-9/12">
                             <div className="text-lg bg-blue-200 text-slate-500 rounded-lg p-10">
                                 Successfully Sent!
                             </div>
