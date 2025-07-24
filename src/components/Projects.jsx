@@ -39,18 +39,18 @@ function Projects({ title }, ref) {
                 <div className='flex px-10'>
                   <div className='relative w-4/12'>
                     {card.tablet && <>
-                      <Image src={tablet} alt='tablet' className='absolute z-20 inset-0' />
+                      {/* <Image src={tablet} alt='tablet' className='absolute z-20 inset-0' /> */}
                       <Image src={card.tablet} alt='tablet' className='absolute  p-1 lg:p-2 z-10 inset-0' />
                     </>}
                   </div>
                   <div className='relative w-full'>
-                    <Image src={laptop} alt='laptop' className='absolute z-20 w-full inset-0' />
+                    {/* <Image src={laptop} alt='laptop' className='absolute z-20 w-full inset-0' /> */}
                     <Image src={card.desktop} alt='desktop' className='absolute px-8 lg:px-14 lg:mt-4 mt-2  z-10 inset-0' />
                   </div>
                   <div className='relative w-2/12'>
                     {card.phone &&
                       <>
-                        <Image src={phone} alt='phone' className='absolute z-20 w-full inset-0' />
+                        {/* <Image src={phone} alt='phone' className='absolute z-20 w-full inset-0' /> */}
                         <Image src={card.phone} alt='phone' className='absolute  p-0.5 sm:p-1 z-10 inset-0' />
                       </>}
                   </div>
