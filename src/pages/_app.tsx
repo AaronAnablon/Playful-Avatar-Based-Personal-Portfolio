@@ -34,7 +34,7 @@ interface ThemeContextType {
 export default function App(): React.JSX.Element {
   const { theme } = useTheme() as ThemeContextType;
   const [viewPort, setViewPort] = useState<ViewPortKeys | null>(null);
-  const [scrolledText, setScrolledText] = useState<boolean>(false);
+  const [scrolledText, setScrolledText] = useState<string | undefined>();
   const [statusText, setStatusText] = useState<boolean>(false);
   const [isWalking, setIsWalking] = useState<boolean>(false);
 
@@ -46,7 +46,7 @@ export default function App(): React.JSX.Element {
     contactRef: useRef<HTMLDivElement | null>(null),
     aboutRef: useRef<HTMLDivElement | null>(null)
   };
-  
+
   const scrollTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function App(): React.JSX.Element {
     if (scrollTimerRef.current) {
       clearTimeout(scrollTimerRef.current);
     }
-    
+
     scrollTimerRef.current = setTimeout(() => {
       setIsWalking(false);
       const scrolledElement = Object.entries(refs).find(([key, ref]) => {
@@ -72,7 +72,7 @@ export default function App(): React.JSX.Element {
         }
         return false;
       });
-      
+
       if (scrolledElement) {
         setViewPort(scrolledElement[0] as ViewPortKeys);
       }
@@ -106,19 +106,19 @@ export default function App(): React.JSX.Element {
     <div className={`${theme}`}>
       <Header setViewPort={setViewPort} />
       <div className={` max-w-screen-2xl overflow-hidden relative flex flex-col justify-content-center mx-auto`}>
-        <div 
-          className='fixed bg-slate-500 z-20 text-white rounded-full bottom-10 right-10 cursor-pointer' 
+        <div
+          className='fixed bg-slate-500 z-20 text-white rounded-full bottom-10 right-10 cursor-pointer'
           onClick={() => scrollToTop()}
         >
           <FaArrowAltCircleUp size={24} />
         </div>
         <Suspense fallback={<div>Loading...</div>}>
           <Blog ref={refs.homeRef} setViewPort={setViewPort} title="Blog" />
-          <AnimatedAaron 
-            statusText={statusText} 
-            scrolledText={scrolledText} 
-            isWalking={isWalking} 
-            handleScroll={handleScroll} 
+          <AnimatedAaron
+            statusText={statusText}
+            scrolledText={scrolledText}
+            isWalking={isWalking}
+            handleScroll={handleScroll}
           />
           <Message setScrolledText={setScrolledText} />
           <Services ref={refs.servicesRef} title="Services" />
